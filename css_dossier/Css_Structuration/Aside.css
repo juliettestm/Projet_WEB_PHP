@@ -1,0 +1,71 @@
+#contener {
+  /* selecteur id "contener"*/
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content; /* Permet de prendre toute la place sur la hauteur*/
+  background: #242026; /*fond de couleur noir*/
+  -webkit-box-shadow: 0 15px 25px rgba(143, 124, 236, 0.7);
+  box-shadow: 0 15px 25px rgba(143, 124, 236, 0.7); /*Ombre en bordure de 0px a droite et en bas de 15px avec un effet de 25px et une couleur violette*/
+  border-radius: 10px; /*Bordure arrondi de 10px*/
+  color: aliceblue; /*couleur du texte blanc*/
+}
+
+.contener_list {
+  /*selecteur class "contener_list"*/
+  /*On met notre contener en flex afin de mettre au centre nos planetes et d'aller a la ligne si plus de place avec wrap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+#Titre {
+  /* selecteur id "Titre"*/
+  text-align: center; /*On aligne le titre*/
+}
+.imageaside {
+  /*selecteur class "imageaside"*/
+  /*taille de nos image 10vw/10vw*/
+  width: 10vw;
+  height: 10vw;
+}
+.imageaside:hover {
+  /*selecteur class "imageaside" lorqu'on les survoles*/
+  -webkit-animation-name: Planetes;
+  animation-name: Planetes; /*Nom de l'animation*/
+  -webkit-animation-duration: 7s;
+  animation-duration: 7s; /*durée de l'animation*/
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; /*Animation faite a l'infini*/
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate; /*animation alterné*/
+}
+
+@-webkit-keyframes Planetes {
+  /*Mise en place de l'animation*/
+  from {
+    -webkit-transform: rotate(0deg) scale(1, 1);
+    transform: rotate(0deg) scale(1, 1); /*les planetes au commencement son a leur echelle initiale*/
+  }
+
+  to {
+    -webkit-transform: rotate(360deg) scale(1.1, 1.1);
+    transform: rotate(360deg) scale(1.1, 1.1); /*Les planetes vont tournerde 360 degres et grossir un tout petit peu*/
+  }
+}
+
+@keyframes Planetes {
+  /*Mise en place de l'animation*/
+  from {
+    -webkit-transform: rotate(0deg) scale(1, 1);
+    transform: rotate(0deg) scale(1, 1); /*les planetes au commencement son a leur echelle initiale*/
+  }
+
+  to {
+    -webkit-transform: rotate(360deg) scale(1.1, 1.1);
+    transform: rotate(360deg) scale(1.1, 1.1); /*Les planetes vont tournerde 360 degres et grossir un tout petit peu*/
+  }
+}

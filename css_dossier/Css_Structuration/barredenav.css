@@ -1,0 +1,337 @@
+button {
+  /*modification bouton nav barre*/
+  z-index: 3;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  line-height: 1;
+  color: inherit;
+  font-family: "calibri";
+  font-size: 20px;
+}
+#home,
+#home:hover {
+  /*modification au passage de la souris */
+  text-decoration: none;
+  color: white;
+}
+
+.al {
+  /*couleur élément nav barre*/
+  color: white;
+  text-decoration: none;
+}
+
+.al:after {
+  /*aniamtion sous éléments nav barre*/
+  display: block;
+  content: "";
+  border-bottom: solid 3px #00ffff;
+  padding-bottom: 3px;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  -o-transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out; /*transition qui va appliquer les modifications appliqué à transform, modifé lors du hover d'un id al*/
+}
+
+.al:hover:after {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+input { /*On crée un input invisible */
+  display: none;
+}
+
+[id^="btn"]:checked + .dropdowns { /*lorsque l'input invisible relié à l'image menu.svg grâce au label est cocher alors on va passer le display du conteneur dropdowns de none à flex*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+:is(.navbar, .icon, .dropdowns) { /*On utilise :is, similaire à :any, :all pour sélectionner tout les élément dans sa paranthèse*/
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar {
+  /*propriété de la nav barre*/
+  z-index: 5;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  height: 72px;
+  background: #19191c;
+  color: #f9f9f9;
+  /*On crée un background avec plusieurs couleurs qui vont défiler avec une animation gradient*/
+  background: -o-linear-gradient(
+    135deg,
+    #280130,
+    #431c5a,
+    #34213f,
+    var(--violet-MAIN),
+    #360929
+  );
+  background: linear-gradient(
+    -45deg,
+    #280130,
+    #431c5a,
+    #34213f,
+    var(--violet-MAIN),
+    #360929
+  );
+  background-size: 400% 400%;
+  -webkit-animation: gradient 10s ease infinite;
+  animation: gradient 10s ease infinite;
+  border-radius: 0 0 50px 50px;
+  -webkit-box-shadow: 0px 0px 20px black;
+  box-shadow: 0px 0px 20px black;
+}
+
+.icon {
+  z-index: 3;
+  right: 0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  background-image: url("../svg/menu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-user-drag: initial;
+  user-select: initial;
+  -moz-user-select: initial;
+  -webkit-user-select: initial;
+  user-select: initial;
+  -ms-user-select: initial;
+  cursor: pointer;
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 4px;
+  padding: 0 24px;
+  height: 100%;
+  opacity: 0.6;
+}
+
+.button > img {
+  display: none;
+}
+
+.dropdowns { /*Conteneur qui contiens les item dropdonw */
+  left: -9999px;
+  z-index: 2;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: #0d0d0e;
+}
+
+.dropdown { /*contient a son tour les dropdow-menu*/
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.dropdown-menu { /*contient les drop-item*/
+  display: -ms-grid;
+  display: grid;
+  margin-bottom: 28px;
+}
+
+.dropdown-menu > .dropitem > button {
+  color: #f9f9f9;
+  opacity: 1;
+  height: 40px;
+}
+
+.dropdown-menu > .dropitem > button:hover {
+  opacity: 1;
+}
+
+@-webkit-keyframes gradient { /*Animation pour le background-linéaire*/
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#home:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 615px) {
+  /*adaptation des tailles entre un téléphone et une tablette*/
+  body .dropdowns { /*lorsque la largeur de l'écran est inférieur à 615px on ne va pas afficher lee dropdows*/
+    display: none;
+    left: 0;
+  }
+
+  #drop1 {
+    margin-top: 65px;
+  }
+
+  .al {
+    font-size: 12px;
+  }
+
+  .icon { 
+    position: fixed;
+  }
+  .dropitem {
+    width: auto;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 5vh;
+  }
+
+  .dropdown-menu > button {
+    height: 20px;
+  }
+
+  .dropdown-menu {
+    display: -ms-grid;
+    display: grid;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 615px) {
+  /*adaptation des tailles entre un téléphone et une tablette*/
+  /*Lorsque la largeur est suffisante pour afficher le dropdowns on va l'afficher et retirer le svg menu*/
+  button {
+    font-size: 15px;
+  }
+
+  .button {
+    padding: 0 10px 0 24px;
+  }
+
+  .dropdown {
+    height: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 6px 24px 10px;
+    margin-bottom: 0;
+    place-items: start;
+    background: #19191c;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .button > img {
+    display: block;
+  }
+
+  .dropdown-menu > .dropitem > button {
+    opacity: 0.6;
+  }
+
+  .dropdown:hover .button {
+    opacity: 1;
+  }
+
+  .dropdowns {
+    position: static;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .icon {
+    display: none;
+  }
+
+  .dropitem {
+    width: auto;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /*adaptation pour un format tablette*/
+  button {
+    font-size: 20px;
+  }
+}

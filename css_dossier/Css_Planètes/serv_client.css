@@ -1,0 +1,265 @@
+:root{ /*modification couleur, on crée des variables réutilisables*/
+	--violet-MAIN:#b052e2;
+	--violet-clair:#daa8ef;
+  --violet-foncé:#2b0427;
+}
+
+input { /*modification des inputs*/
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border: 2px solid #b052e2;
+  border-radius: 7px;
+  background-color: var(--violet-foncé);
+  -webkit-box-shadow: 0px 0px 15px #b052e2;
+          box-shadow: 0px 0px 15px #b052e2;
+  padding: 10px;
+  color: white;
+  margin-top: 10px;
+}
+
+input:focus {
+  outline: none !important; /*On utilise !important pour etre sur de la priorité*/
+}
+
+
+.Main_grid{
+  margin-top: 25px;
+}
+
+.bouton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+  
+.boutonrad {
+  display: inline-block;
+  width: auto;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+fieldset { /*modification questionnaire*/
+  position: relative;
+  height: 100%;
+  background: #242026;
+  -webkit-box-shadow: 0 15px 25px rgba(143, 124, 236, 0.7);
+          box-shadow: 0 15px 25px rgba(143, 124, 236, 0.7);
+  border-radius: 10px;
+}
+
+fieldset > textarea { /*modification de la partie ou on peut écrire sur le questionnaire  */
+  width: 25%;
+  height: 50px;
+  margin-left: 10vw;
+  display: block;
+  background-color: var(--violet-MAIN);
+  border: solid 2px var(--violet-clair);
+  -webkit-transition: width 1s ease-in-out, height 1s ease-in-out;
+  -o-transition: width 1s ease-in-out, height 1s ease-in-out;/*on crée une transition avec les propriété width et height qui changent lors du focus*/
+  transition: width 1s ease-in-out, height 1s ease-in-out;
+}
+
+fieldset > textarea:focus {
+  outline: none;
+  margin-left: 10vw;
+  border: solid 2px var(--violet-MAIN);
+  background-color: var(--violet-foncé);
+  color: white;
+  width: 50%;
+  height: 100px;
+}
+
+#fieldset2{ /*utilisation d'un deuxième carré quetsionnaire*/
+  margin-top: 5vh;
+}
+
+#objet{
+  background-color: rgb(179, 125, 230);
+  -webkit-box-shadow: 0px 0px 15px #b052e2;
+          box-shadow: 0px 0px 15px #b052e2;
+}
+
+#objet:hover{ /*modification del'objet au survole de la souris*/
+  background-color: var(--violet-clair);
+}
+
+.formLetter input[type="submit"],.formLetter input[type="reset"]{ /*modification bouton envoyer et effacer*/
+	font-weight:bold;
+	color:white;
+	background-color:var(--violet-MAIN);
+	border:2px solid var(--violet-MAIN);
+	margin:10px;
+	padding:10px 20px; 
+	width:auto;
+	border-radius:10px;
+	-webkit-box-shadow:2px 2px 5px var(--violet-MAIN);
+	        box-shadow:2px 2px 5px var(--violet-MAIN); 
+ }
+
+.formLetter input[type="submit"]:hover,.formLetter input[type="reset"]:hover{/*modification bouton envoyer et effacer au survole de la souris*/
+	color:rgb(255, 255, 255);
+	background-color:rgb(97, 8, 105);
+	border:2px solid var(--violet-MAIN);
+	-webkit-box-shadow: 2px 2px 5px rgb(0, 0, 0);
+	        box-shadow: 2px 2px 5px rgb(0, 0, 0);
+	cursor:pointer; /*On modifie l'apparence du curseur lors du survol des inputs*/
+}
+
+@media only screen and (min-width: 430px) {
+   /*Adaptation de la taille de la page entre téléphone et tablette*/
+  .Container_grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 0px 1fr 0px 1fr 0px 1fr 0px 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;/*taille des colonne*/
+    -ms-grid-rows: -webkit-min-content 0px auto 0px 1fr 0px auto 0px auto;
+    -ms-grid-rows: min-content 0px auto 0px 1fr 0px auto 0px auto;
+    grid-template-rows: -webkit-min-content auto 1fr auto auto;
+    grid-template-rows: min-content auto 1fr auto auto;/*taille des lignes*/
+    gap: 0px 0px;
+    grid-auto-flow: row;
+        grid-template-areas:
+      "Header_grid Header_grid Header_grid Header_grid Header_grid"
+      "Main_grid Main_grid Main_grid Aside Aside"
+      "Main_grid Main_grid Main_grid Aside Aside"
+      "Main_grid Main_grid Main_grid Image_grid Image_grid"
+      "Footer_grid Footer_grid Footer_grid Footer_grid Footer_grid";
+  }
+
+  .Header_grid {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+    }
+    .Footer_grid {
+    -ms-grid-row: 9;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+    }
+    .Main_grid {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    }
+    .Aside {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+    }
+    .Image_grid {
+    -ms-grid-row: 7;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+    }
+  img {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /*Adapation de la taille pour les tablettes*/
+  .Container_grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 0px 1fr 0px 1fr 0px 1fr 0px 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: -webkit-min-content 0px auto 0px 1fr 0px auto 0px auto;
+    -ms-grid-rows: min-content 0px auto 0px 1fr 0px auto 0px auto;
+    grid-template-rows: -webkit-min-content auto 1fr auto auto;
+    grid-template-rows: min-content auto 1fr auto auto;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+        grid-template-areas:
+      "Header_grid Header_grid Header_grid Header_grid Header_grid"
+      "Main_grid Main_grid Main_grid Aside Aside"
+      "Main_grid Main_grid Main_grid Aside Aside"
+      "Main_grid Main_grid Main_grid Image_grid Image_grid"
+      "Footer_grid Footer_grid Footer_grid Footer_grid Footer_grid";
+    /*Afin d'étirer la balise sur l'ensemble du viewport: vh (Viewport Height)*/
+  }
+  .Header_grid {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+    }
+    .Footer_grid {
+    -ms-grid-row: 9;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+    }
+    .Main_grid {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    }
+    .Aside {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+    }
+    .Image_grid {
+    -ms-grid-row: 7;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+    }
+  
+}
+@media only screen and (min-width: 984px) {
+  /*Adaptation de la taille pour un ordinateur*/
+  .Container_grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 0px 1fr 0px 1fr 0px 1fr 0px 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: -webkit-min-content 0px auto 0px 1fr 0px auto 0px auto;
+    -ms-grid-rows: min-content 0px auto 0px 1fr 0px auto 0px auto;
+    grid-template-rows: -webkit-min-content auto 1fr auto auto;
+    grid-template-rows: min-content auto 1fr auto auto;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+        grid-template-areas:
+      "Header_grid Header_grid Header_grid Header_grid Header_grid"
+      "Main_grid Main_grid Main_grid Aside Aside"
+      "Main_grid Main_grid Main_grid Aside Aside"
+      "Main_grid Main_grid Main_grid Image_grid Image_grid"
+      "Footer_grid Footer_grid Footer_grid Footer_grid Footer_grid";
+    /*Afin d'étirer la balise sur l'ensemble du viewport: vh (Viewport Height)*/
+  }
+  .Header_grid {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+    }
+    .Footer_grid {
+    -ms-grid-row: 9;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+    }
+    .Main_grid {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    }
+    .Aside {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+    }
+    .Image_grid {
+    -ms-grid-row: 7;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+    }
+}
+
+
+
+   

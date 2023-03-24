@@ -1,0 +1,216 @@
+:root { /*couleurs de la nav bar*/
+  --violet-MAIN: #b052e2;
+  --violet-clair: #daa8ef;
+  --violet-foncé: #2b0427;
+  --bleu: #2c2d69;
+  --bleuclair: #383984;
+}
+
+body,
+img { /*On empêche au maximum l'utilisateur de séletionner par erreurs du texte ou des images*/
+  -user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+body {/*modification mise en page texte*/
+  margin: 0; /*Pour régler les conflits et gérer nous même les marges et les paddings on les à mis à 0*/
+  padding: 0;
+  font-family: "calibri";
+  background-attachment: fixed;
+  background-size: 250%;
+  background-position: center;
+}
+/*On met la vidio au dernier plan derrière tout le reste pour jouer le role d'arrière plan*/
+video { 
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+#background-video {/*vidéo d'arrière plan*/
+  height: 100vh;
+  width: 100vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.important {/*texte avec une mise en page differente du reste*/
+  text-decoration: none;
+  font-weight : bold;
+}
+
+/*//SCROLL BAR\\*/
+* {
+  scrollbar-width: auto;
+}
+
+/*On définit une largeur à la scroll-bar*/
+*::-webkit-scrollbar {
+  width: 10px;
+}
+/*On définit une couleur à la scroll-bar*/
+*::-webkit-scrollbar-track {
+  background: linear-gradient(
+    -45deg,
+    #111c4a,
+    var(--violet-MAIN),
+    #bb7be1,
+    var(--violet-MAIN),
+    #111c4a
+  );
+}
+/*On définit une couleur au curseur de la scroll bar*/
+*::-webkit-scrollbar-thumb {
+  background-color: var(--bleu);
+  border-radius: 10px;
+  border: 0px none #ffffff;
+}
+
+.Image_grid{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin: 0;
+ }
+
+ .Image_grid img{/*pour l'image de la planete*/
+  width: 100%;
+ }
+
+ .Image_1{/*pour la premiere image lors du defilement de la page*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 5vw 0 25vw 0;
+}
+
+
+/* ici pour le bouton qui remonte en haut de page on à réutiliser le même css que dans le footer*/
+.BT { /*propriété bouton social media*/
+  display: inline-block;
+  width: 65px;
+  height: 65px;
+  background: #fff;
+  -webkit-box-shadow: 0px 5px 15px -5px #aaa;
+          box-shadow: 0px 5px 15px -5px #aaa;
+  margin: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 4;
+  color: #ff00dc59;
+  text-align: center;
+}
+
+.BT i {
+  position: relative;
+  z-index: 4;
+  top: 20px;
+  font-size: 26px;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.BT::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(69, 182, 252)), color-stop(rgb(131 58 180)), to(#1f7ef2));
+  background: -o-linear-gradient(rgb(69, 182, 252), rgb(131 58 180), #1f7ef2);
+  background: linear-gradient(rgb(69, 182, 252), rgb(131 58 180), #1f7ef2);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  left: -110%;
+  top: 90%;
+}
+
+.BT:hover i {
+  color: #fff;
+  -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.BT:hover::before {
+  -webkit-animation: socialButtons 0.7s 1;
+          animation: socialButtons 0.7s 1;
+  left: -10%;
+  top: -10%;
+}
+
+@-webkit-keyframes socialButtons {
+  0% {
+    left: -110%;
+    top: 90%;
+  }
+
+  50% {
+    left: 10%;
+    top: -30%;
+  }
+
+  100% {
+    top: -10%;
+    left: -10%;
+  }
+}
+
+@keyframes socialButtons {
+  0% {
+    left: -110%;
+    top: 90%;
+  }
+
+  50% {
+    left: 10%;
+    top: -30%;
+  }
+
+  100% {
+    top: -10%;
+    left: -10%;
+  }
+}
