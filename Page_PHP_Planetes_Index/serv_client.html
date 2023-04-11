@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!--Début du head-->
+    <meta charset="utf-8" >
+    <!--Mise en place de l'encode des caractères pour les navigateurs-->
+    <title>Service client</title>
+    <!--Titre de notre Site-->
+    <meta name="description" content="Tout sur le Service client" >
+    <!--Description de la page-->
+    <meta
+      name="keywords"
+      content="système solaire, planètes, Services clients "
+    >
+    <!--Mots clé de la page-->
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    >
+    <!--Mise en place de zone de visibilité de la page web pour l'utilisateur-->
+    <script
+      src="https://kit.fontawesome.com/0e1c95535d.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Chargement de la librairie d'image pour les réseaux dans le footer-->
+    <meta name="autors" content="Claus, Demeulemeester, Rouzé, Saint-Maxent" >
+    <!--Auteurs de la page-->
+    <link rel="icon" type="image/x-con" href="../Images/Images.ico/logo.ico" >
+    <!--L'icone du navigateur-->
+    <link
+      rel="stylesheet"
+      href="../css_dossier/Css_Structuration/barredenav.css"
+    >
+    <link rel="stylesheet" href="../css_dossier/Css_Structuration/main.css" >
+    <link rel="stylesheet" href="../css_dossier/Css_Structuration/footer.css" >
+    <!--Lien permettant d'accéder au code CSS-->
+    <link rel="stylesheet" href="../css_dossier/Css_Structuration/Aside.css" >
+    <link rel="stylesheet" href="../css_dossier/Css_Structuration/grid.css" >
+    <link
+      rel="stylesheet"
+      href="../css_dossier/Css_Planètes/serv_client.css"
+    ></head
+  ><!--Fin de la balise head-->
+  <body>
+    <video
+      id="background-video"
+      muted=""
+      autoplay="autoplay"
+      playsinline
+      loop
+    >
+      <source src="../Images/video/fdw.mp4" type="video/mp4" ></video
+    ><!--video arrière plan-->
+    <a href="#" id="HDP">.</a> <!-- On crée un lien non définit avec un . pour le bouton haut de page --> 
+    <div class="Container_grid">
+      <!--Début du header -->
+      <div class="Header_grid">
+        <!--Début du header -->
+        <header>
+          <nav class="navbar">
+            <!--Début de la navbar divisé en 5 parties-->
+            <button class="button">
+              <!--premiere partie-->
+              <a id="home" href="../index.html">Accueil</a></button
+            ><!--Fin de la premiere partie-->
+            <label for="btn" class="icon">
+              <img src="../svg/menu.svg" alt="img menu" >
+            </label>
+            <input type="checkbox" id="btn" >
+            <div class="dropdowns">
+              <div class="dropdown" id="drop1">
+                <!--Deuxieme partie divisé en trois items-->
+                <button class="button">
+                  Actualités<img
+                    src="../svg/chevron.svg"
+                    alt="Image fleche en bas"
+                  ><!--Tout sur l'actualité avec une image "fléche vers le bas"-->
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropitem">
+                    <!--Début du premier item-->
+                    <button>
+                      <a
+                        class="al"
+                        href="https://www.futura-sciences.com/sciences/actualites/astronomie-evenements-astronomiques-ne-pas-manquer-2022-65785/"
+                        target="_blank"
+                        >Les évènements à ne pas rater</a
+                      ><!--Lien permettant de ne rater aucun evenement en cliquant dessus nous ramenant sur le site de furura science-->
+                    </button>
+                  </div>
+                  <!--Fin du premier item-->
+                  <div class="dropitem">
+                    <!--Début du deuxieme item-->
+                    <button>
+                      <a
+                        class="al"
+                        href="https://www.futura-sciences.com/sciences/espace/astronomie/actualites/"
+                        target="_blank"
+                        >Actualités sur l'astronomie</a
+                      ><!--Lien permettant de voir l'actualité de l'astronomie sur le site futura sciences-->
+                    </button>
+                  </div>
+                  <!--Fin du deuxieme item-->
+                  <div class="dropitem">
+                    <!--Début du troisieme item-->
+                    <button>
+                      <a
+                        class="al"
+                        href="https://fr.euronews.com/tag/mission-spatiale"
+                        target="_blank"
+                        >Prochaines expéditions</a
+                      ><!--Lien permettant de voir les prochaines expéditions sur euronews-->
+                    </button>
+                  </div>
+                  <!--Fin du troisieme item-->
+                </div>
+              </div>
+              <!--Fin de la Deuxieme partie-->
+              <div class="dropdown">
+                <button class="button">
+                  <!--Troisieme partie divisée en Trois items-->
+                  Partenariats<img
+                    src="../svg/chevron.svg "
+                    alt="Image fleche en bas"
+                  ><!--Nos partenaires-->
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropitem">
+                    <!--Début du premier item-->
+                    <button>
+                      <a class="al" href="https://www.nasa.gov/" target="_blank"
+                        >NASA</a
+                      ><!--Lien qui renvoie vers la nasa-->
+                    </button>
+                  </div>
+                  <!--fin du premier item-->
+                  <div class="dropitem">
+                    <!--Début du Deuxieme item-->
+                    <button>
+                      <a
+                        class="al"
+                        href="https://www.esa.int/Space_in_Member_States/France"
+                        target="_blank"
+                        >ESA-France</a
+                      ><!--Lien qui renvoie vers ESA France-->
+                    </button>
+                  </div>
+                  <!--Fin du Deuxieme item-->
+                  <div class="dropitem">
+                    <!--Début du troisieme item-->
+                    <button>
+                      <a class="al" href="https://cnes.fr/fr" target="_blank"
+                        >CNES</a
+                      ><!--Lien qui renvoie vers le CNES-->
+                    </button>
+                  </div>
+                  <!--Fin du troisieme item-->
+                </div>
+              </div>
+              <!--Fin de la troisieme partie-->
+              <div class="dropdown">
+                <button class="button">
+                  <!--Quatrieme partie divisée en trois items-->
+                  Produits dérivés
+                  <img
+                    src="../svg/chevron.svg"
+                    alt="Image fleche en bas"
+                  ></button
+                ><!--Nos produits dérivée-->
+                <div class="dropdown-menu">
+                  <div class="dropitem">
+                    <!--Début du premier item-->
+                    <button>
+                      <a
+                        class="al"
+                        href="https://www.maison-astronomie.com/fr/"
+                        target="_blank"
+                        >Maison-astronomie</a
+                      ><!--Lien renvoyant vers un site d'astronomie-->
+                    </button>
+                  </div>
+                  <!--Fin du premier item-->
+                  <div class="dropitem">
+                    <!--Début du deuxieme item-->
+                    <button>
+                      <a
+                        class="al"
+                        href="https://www.nasa-shop.fr/"
+                        target="_blank"
+                        >Nasa shop</a
+                      ></button
+                    ><!--Lien renvoyant vers le site de la NASA-->
+                  </div>
+                  <!--Fin du deuxieme item-->
+                  <div class="dropitem">
+                    <!--Début du troisieme item-->
+                    <button>
+                      <a
+                        class="al"
+                        href="https://www.cite-espace.com/"
+                        target="_blank"
+                        >Cite-espace</a
+                      ><!--Lien renvoyant vers le site de la Cité espace-->
+                    </button>
+                  </div>
+                  <!--Fin du troisieme item-->
+                </div>
+              </div>
+              <!--Fin de la quatriéme partie-->
+              <div class="dropdown">
+                <button class="button">
+                  <!--Cinquieme partie-->
+                  Envie d'autres infos<!--parties qui renvoie vers d'autres info-->
+                  <img src="../svg/chevron.svg" alt="Image fleche en bas" >
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropitem">
+                    <!--Début du premier item-->
+                    <button>
+                      <a
+                        class="al"
+                        href="https://fr.wikipedia.org/wiki/Liste_des_missions_d%27exploration_spatiale_en_cours"
+                        target="_blank"
+                        >Missions spatiales</a
+                      ><!--Lien vers les missions spatiales sur wikipedia-->
+                    </button>
+                  </div>
+                  <!--Fin du premier item-->
+                  <div class="dropitem">
+                    <!--Début du deuxieme item-->
+                    <button>
+                      <a
+                        class="al"
+                        href="https://www.science-et-vie.com/definitions-science/fusee-69347.html"
+                        target="_blank"
+                        >Les fusées</a
+                      ><!--Lien renvoyant vers les fusées du sites science et vie-->
+                    </button>
+                  </div>
+                  <!--Fin du deuxieme item-->
+                  <div class="dropitem">
+                    <!--Début du troisieme item-->
+                    <button>
+                      <a
+                        class="al"
+                        href="https://fr.wikipedia.org/wiki/Astronaute"
+                        target="_blank"
+                        >Astronautes</a
+                      >
+                      <!--Lien renvoyant vers les astronautes-->
+                    </button>
+                  </div>
+                  <!--Fin du troisieme item-->
+                </div>
+              </div>
+              <!--Fin de la cinquieme partie-->
+            </div>
+          </nav>
+          <!--Fin de la navbar -->
+        </header>
+      </div>
+      <!--Fin du header-->
+      <div class="Main_grid">
+        <!--Début du main-->
+        <main>
+          <div>
+            <form method="post" action="#" class="formLetter">
+              <fieldset>
+                <legend>Informations sur vous</legend><!--Premiere partie les informationd sur l'utilisateur-->
+
+                <label>Genre:</label
+                ><!--Damande du genre-->
+                <br >
+                <br >
+                <input class="boutonrad" type="radio" name="genre" id="mme" >
+                <label for="mme">Féminin</label>
+                <br ><!--Avec la classe bouton l'identifiant Madame-->
+                <br >
+                <input class="boutonrad" type="radio" name="genre" id="mr" >
+                <label for="mr">Masculin</label>
+                <!--Avec la classe bouton l'identifiant Monsieur-->
+                <br ><br >
+
+                <label for="nom">Nom :</label
+                ><!--Demande du nom-->
+                <input
+                  required
+                  class="bouton"
+                  type="text"
+                  name="nom"
+                  id="nom"
+                  placeholder="Votre nom"
+                ><!-- l'utilisateur va remplir son nom dans l'input -->
+                <br ><br >
+
+                <label for="prenom">Prénom :</label
+                ><!--Demande du prénom-->
+                <input
+                  required
+                  class="bouton"
+                  type="text"
+                  name="prenom"
+                  id="prenom"
+                  placeholder="Votre prénom"
+                ><!-- l'utilisateur va rentrer son prénom dans l'input-->
+                <br ><br >
+
+                <label for="courriel">Courriel : </label
+                ><!-- Demande du courier-->
+                <input
+                  required
+                  class="bouton"
+                  type="email"
+                  name="courriel"
+                  id="courriel"
+                  placeholder="Mail"
+                ><!-- l'utilisateur va rentrer son couriel dans l'input-->
+              </fieldset>
+              <fieldset id="fieldset2">
+                <legend>Votre demande</legend>
+                <!-- Deuxieme partie les Demande spécifique de l'utilisateur-->
+
+                <label for="objet">Objet du message :</label
+                ><!--L'objet du message-->
+                <select id="objet" name="objet" required>
+                  <option value="0">- Séléctionner -</option>
+                  <!--A choix multiple-->
+                  <option value="sugg">Suggestions</option>
+                  <!--Premier choix suggestion -->
+                  <option value="recl">Reclamations</option>
+                  <!-- Deuxieme choix Reclamation-->
+                  <option value="insc">Inscription</option>
+                  <!--Troisieme choix Inscription-->
+                  <option value="prob">Problèmes techniques</option>
+                  <!--Quatrieme choix probléme technique-->
+                  <option value="autr">Autre...</option>
+                </select>
+                <br ><br >
+                <label for="description">Message :</label>
+                <br ><!--Le Message-->
+                <textarea
+                  rows="10"
+                  cols="50"
+                  name="description"
+                  id="description"
+                  maxlength="200"
+                ></textarea
+                ><!--A remplir pour nous expliquer le besoin de l'utilisateur-->
+                <br ><br >
+
+                <label for="document">Document:</label
+                ><!--Les documents si l'utilisateur veut en ajouter-->
+                <input
+                  class="bouton"
+                  type="file"
+                  id="document"
+                  name="document"
+                >
+                <br ><br >
+                <input
+                  class="bouton"
+                  type="submit"
+                  name="Envoyer"
+                  id="soumission"
+                  value="Envoyer"
+                ><!--Le bouton envoyer -->
+                <input class="bouton" type="reset" ><!--Ou le bouton Effacer-->
+              </fieldset>
+            </form>
+          </div>
+        </main>
+      </div>
+      <!--Fin du main-->
+      <div class="Footer_grid">
+        <!--Début du Footer appliqué a chaque page grâce a une class-->
+        <footer>
+          <div class="footcont">
+            <!--Début du contenu du footer diviser en 3 items-->
+            <div class="footitem" id="footsec">
+              <!--Début du premier item les réseaux sociaux-->
+              <label for="ch" class="iconsocial">
+                <h2 class="H2">Suivez-nous :</h2>
+                <img
+                  id="ilink"
+                  class="btn"
+                  src="../Images/Images.png/lien-420.png"
+                  alt="Image réseau"
+                ><!--Affiche l'image des réseaux en attendant l'animation-->
+              </label>
+
+              <input type="checkbox" id="ch" >
+
+              <div class="container">
+                <!--Container de l'animation -->
+                <a href="#"></a
+                ><!--Ligne pour effet footer-->
+                <a href="https://www.facebook.com/NASA" class="btn"
+                  ><i class="fab fa-facebook-f"></i></a
+                ><!--Affiche l'image du réseaux facebook-->
+                <a
+                  href="https://twitter.com/nasa?s=11&t=03SfB6n7oJmEwPq1Q9AWhQ"
+                  class="btn"
+                  ><i class="fab fa-twitter"></i></a
+                ><!--Affiche l'image du réseaux Twitter-->
+                <a
+                  href="https://www.linkedin.com/company/nasa?original_referer=https%3A%2F%2Fwww.google.com%2F"
+                  class="btn"
+                  ><i class="fa-brands fa-linkedin"></i></a
+                ><!--Affiche l'image du réseaux linkedin-->
+                <a
+                  href="https://instagram.com/nasa?igshid=YmMyMTA2M2Y="
+                  class="btn"
+                  ><i class="fab fa-instagram"></i></a
+                ><!--Affiche l'image du réseaux instagram-->
+                <a href="https://www.youtube.com/@NASA" class="btn"
+                  ><i class="fab fa-youtube"></i></a
+                ><!--Affiche l'image du réseaux youtube-->
+              </div>
+            </div>
+            <!--Fin du premier item-->
+            <div class="footitem">
+              <!--Début du deuxieme item les auteurs-->
+              <h2>En savoir plus sur nous</h2>
+              <p>Notre équipe :</p>
+              <ul>
+                <!--Utilisation d'une liste non-ordonée-->
+                <li>Claus Damia</li>
+                <li>Demeulemeester Maxime</li>
+                <li>Saint-Maxent Juliette</li>
+                <li>Rouzé Capucine</li>
+              </ul>
+              <!--Fin de la liste-->
+            </div>
+            <!--Fin du deuxieme item-->
+            <div class="footitem">
+              <!--Début du troisieme item les questions-->
+              <h2>Besoin d'aide ?</h2>
+              <ul>
+                <!--Début de la liste non ordonée pour les questions-->
+                <li><a href="serv_client.html">Service client</a></li>
+                <li><a href="mention_leg.html">Mentions légales</a></li>
+              </ul>
+              <!--Fin de la liste non ordonée pour les questions-->
+            </div>
+            <!--Fin du troisieme item-->
+            <div class="footitem">
+              <!--début du quatrième item-->
+              <a href="#HDP" class="BT"><i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+            <!--Fin du quatrième item-->
+          </div>
+          <!--Fin du contenu du footer-->
+          
+        </footer>
+      </div>
+      <!--Fin du Footer-->
+    </div>
+  </body>
+</html>
