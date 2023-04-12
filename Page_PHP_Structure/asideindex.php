@@ -17,7 +17,7 @@
             <!--Début de la navbar divisé en 5 parties-->
             <button class='button'>
               <!--premiere partie-->
-              <a id='home' href='index.html'>Accueil</a></button
+              <a id='home' href='index.php'>Accueil</a></button
             ><!--Fin de la premiere partie-->
             <label for='btn' class='icon'>
               <img src='svg/menu.svg' alt='img menu' >
@@ -163,7 +163,7 @@
               <div class='dropdown'>
                 <button class='button'>
                   <!--Cinquieme partie-->
-                  Envie d'autres infos<!--parties qui renvoie vers d'autres info-->
+                  Mon Compte<!--parties qui renvoie vers d'autres info-->
                   <img src='svg/chevron.svg' alt='fleche en bas' >
                 </button>
                 <div class='dropdown-menu'>
@@ -172,9 +172,9 @@
                     <button>
                       <a
                         class='al'
-                        href='https://fr.wikipedia.org/wiki/Liste_des_missions_d%27exploration_spatiale_en_cours'
+                        href='Page_PHP_Structure/connexionclients.php'
                         target='_blank'
-                        >Missions spatiales</a
+                        >Connexion</a
                       ><!--Lien vers les missions spatiales sur wikipedia-->
                     </button>
                   </div>
@@ -184,25 +184,13 @@
                     <button>
                       <a
                         class='al'
-                        href='https://www.science-et-vie.com/definitions-science/fusee-69347.html'
+                        href="Page_PHP_Structure/inscription.php"
                         target='_blank'
-                        >Les fusées</a
+                        >Inscription</a
                       ><!--Lien renvoyant vers les fusées du sites science et vie-->
                     </button>
                   </div>
                   <!--Fin du deuxieme item-->
-                  <div class='dropitem'>
-                    <!--Début du troisieme item-->
-                    <button>
-                      <a
-                        class='al'
-                        href='https://fr.wikipedia.org/wiki/Astronaute'
-                        target='_blank'
-                        >Astronautes</a
-                      ><!--Lien renvoyant vers les astronautes-->
-                    </button>
-                  </div>
-                  <!--Fin du troisieme item-->
                 </div>
               </div>
               <!--Fin de la cinquieme partie-->
@@ -221,7 +209,7 @@
           </div>
           <div class='contener_list'>
             <!--Container de l'image des planetes-->
-            <a class='gauche' href='Page_html/soleil.html' title='Soleil'>
+            <a class='gauche' href='Page_PHP_Planetes_Index/soleil.php' title='Soleil'>
               <img
                 id='Soleil'
                 class='imageaside'
@@ -229,7 +217,7 @@
                 alt='Image soleil'
               ><!--Affichage de l'image du soleil avec un lien qui permet d'accéder a la page html du soleil-->
             </a>
-            <a href='Page_html/mercure.html' title='Mercure'>
+            <a href='Page_PHP_Planetes_Index/mercure.php' title='Mercure'>
               <img
                 id='Mercure'
                 class='imageaside'
@@ -237,7 +225,7 @@
                 alt='Image mercure'
               ><!--Affichage de l'image du mercure avec un lien qui permet d'accéder a la page html du mercure-->
             </a>
-            <a href='Page_html/venus.html' title='Vénus'>
+            <a href='Page_PHP_Planetes_Index/venus.php' title='Vénus'>
               <img
                 id='Venus'
                 class='imageaside'
@@ -245,7 +233,7 @@
                 alt='Image Venus'
               ><!--Affichage de l'image du Vénus avec un lien qui permet d'accéder a la page html du Vénus-->
             </a>
-            <a href='Page_html/terre.html' title='Terre'>
+            <a href='Page_PHP_Planetes_Index/terre.php' title='Terre'>
               <img
                 id='Terre'
                 class='imageaside'
@@ -253,7 +241,7 @@
                 alt='Image Terre'
               ><!--Affichage de l'image du Terre avec un lien qui permet d'accéder a la page html du Terre-->
             </a>
-            <a href='Page_html/mars.html' title='Mars'>
+            <a href='Page_PHP_Planetes_Index/mars.php' title='Mars'>
               <img
                 id='Mars'
                 class='imageaside'
@@ -269,7 +257,7 @@
                 alt='Image Jupiter'
               ><!--Affichage de l'image du Jupiter avec un lien qui permet d'accéder a la page html du Jupiter-->
             </a>
-            <a href='Page_html/saturne.html' title='Saturne'>
+            <a href='Page_PHP_Planetes_Index/saturne.php' title='Saturne'>
               <img
                 id='Saturne'
                 class='imageaside'
@@ -277,7 +265,7 @@
                 alt='Image Saturne'
               ><!--Affichage de l'image du Saturne avec un lien qui permet d'accéder a la page html du Saturne-->
             </a>
-            <a href='Page_html/uranus.html' title='Uranus'>
+            <a href='Page_PHP_Planetes_Index/uranus.php' title='Uranus'>
               <img
                 id='Uranus'
                 class='imageaside'
@@ -285,7 +273,7 @@
                 alt='Image Uranus'
               ><!--Affichage de l'image du Uranus avec un lien qui permet d'accéder a la page html du Uranus-->
             </a>
-            <a href='Page_html/neptune.html' title='Neptune'>
+            <a href='Page_PHP_Planetes_Index/neptune.php' title='Neptune'>
               <img
                 id='Neptune'
                 class='imageaside'

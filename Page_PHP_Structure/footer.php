@@ -61,8 +61,8 @@
               <h2>Besoin d'aide ?</h2>
               <ul>
                 <!--Début de la liste non ordonée pour les questions-->
-                <li><a href="serv_client.html">Service client</a></li>
-                <li><a href="mention_leg.html">Mentions légales</a></li>
+                <li><a href="serv_client.php">Service client</a></li>
+                <li><a href="mention_leg.php">Mentions légales</a></li>
               </ul>
               <!--Fin de la liste non ordonée pour les questions-->
             </div>

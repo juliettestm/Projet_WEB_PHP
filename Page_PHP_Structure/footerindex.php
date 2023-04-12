@@ -61,9 +61,9 @@
               <h2>Besoin d'aide ?</h2>
               <ul>
                 <!--Début de la liste non ordonée pour les questions-->
-                <li><a href="Page_html/serv_client.html">Service client</a></li>
+                <li><a href="Page_PHP_Planetes_Index/serv_client.php">Service client</a></li>
                 <li>
-                  <a href="Page_html/mention_leg.html">Mentions légales</a>
+                  <a href="Page_PHP_Planetes_Index/mention_leg.php">Mentions légales</a>
                 </li>
               </ul>
               <!--Fin de la liste non ordonée pour les questions-->
