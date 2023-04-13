@@ -47,7 +47,7 @@
 			$prenom=$_POST["prenom"];
 			$email=$_POST["email"];
 			$date=$_POST["dateN"];
-			$login=$_POST["pseudo"]
+			$login=$_POST["pseudo"];
 			$mdp=$_POST["Motdepasse"];
 			//Compléter ICI
 			$reqPrep1="INSERT INTO `Clients` ( `Nom`, `Prenom`, `Email`, `DateNaissance`,`pseudo`,`mdp`) VALUES ( '$nom','$prenom','$email','$date','$login','$mdp')";
