@@ -22,7 +22,10 @@ input:focus {
   outline: none !important; /*On utilise !important pour etre sur de la priorité*/
 }
 
-
+h1{
+  margin-top: 15px;
+  color: white;
+}
 .Main_grid{
   margin-top: 25px;
 }

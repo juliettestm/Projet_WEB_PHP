@@ -2,6 +2,10 @@
 <html lang="fr">
 <head>
   <?php  include("../Page_PHP_Structure/header.php");?>
+  <link
+      rel="stylesheet"
+      href="../css_dossier/Css_Planètes/serv_client.css"
+    >
 </head>
 <body>
 <?php  include("../Page_PHP_Structure/aside.php");?>

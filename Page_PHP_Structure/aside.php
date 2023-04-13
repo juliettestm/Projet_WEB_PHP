@@ -176,7 +176,7 @@
                         class="al"
                         href="../Page_PHP_Structure/connexionclients.php"
                         target="_blank"
-                        >Conexion</a
+                        >Connexion</a
                       ><!--Lien vers les missions spatiales sur wikipedia-->
                     </button>
                   </div>
