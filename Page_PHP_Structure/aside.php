@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <video
       id="background-video"
       muted=""
@@ -171,26 +174,56 @@
                 <div class="dropdown-menu">
                   <div class="dropitem">
                     <!--Début du premier item-->
-                    <button>
-                      <a
-                        class="al"
-                        href="../Page_PHP_Structure/connexionclients.php"
-                        target="_blank"
-                        >Connexion</a
-                      ><!--Lien vers les missions spatiales sur wikipedia-->
-                    </button>
-                  </div>
-                  <!--Fin du premier item-->
-                  <div class="dropitem">
-                    <!--Début du deuxieme item-->
-                    <button>
-                      <a
-                        class="al"
-                        href="../Page_PHP_Structure/inscription.php"
-                        target="_blank"
-                        >Inscription</a
-                      ><!--Lien renvoyant vers les fusées du sites science et vie-->
-                    </button>
+                    <?php
+		
+    if(isset($_SESSION["authentifie"])==true){ // si un utilisateur est authentifié
+      echo"<button>
+      <a
+        class='al'
+        href='../Page_PHP_Structure/logout.php'
+        
+        >Deconnexion</a
+      ><!--Lien vers les missions spatiales sur wikipedia-->
+    </button>
+  </div>
+  <!--Fin du premier item-->
+  <div class='dropitem'>
+    <!--Début du deuxieme item-->
+    <button>
+      <a
+        class='al'
+        href='../Page_PHP_Structure/Compteclient.php'
+        
+        >Information sur vous</a
+      ><!--Lien renvoyant vers les fusées du sites science et vie-->
+    </button>";
+    }
+     // sinon on affiche le formulaire
+  else{
+  ?>
+                  <button>
+                    <a
+                      class='al'
+                      href='../Page_PHP_Structure/connexionclients.php'
+                     
+                      >Connexion</a
+                    ><!--Lien vers les missions spatiales sur wikipedia-->
+                  </button>
+                </div>
+                <!--Fin du premier item-->
+                <div class='dropitem'>
+                  <!--Début du deuxieme item-->
+                  <button>
+                    <a
+                      class='al'
+                      href="../Page_PHP_Structure/inscription.php"
+                      
+                      >Inscription</a
+                    ><!--Lien renvoyant vers les fusées du sites science et vie-->
+                  </button>
+                  <?php
+  }
+  ?>
                   </div>
                   <!--Fin du deuxieme item-->
                 </div>

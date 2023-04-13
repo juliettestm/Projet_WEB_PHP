@@ -1,9 +1,5 @@
 <?php
- 	//Exercice 2 : Question 2
-     
-    //Démarrer la session
-	session_start();
-	
+session_start();
 	//Script du traitement du formulaire d'authentification
 	if(isset($_POST['Exo2Envoyer'])){
 		
@@ -16,12 +12,12 @@
             $req1->execute();
 			$resultat = $req1->fetchAll();
 			if ($resultat==NULL){
-				
+				$a=2;
 			}
-			else{
+			elseif($resultat!=NULL){
 				foreach($resultat as $row){
 				$tab=array("Mdp"=>"$row[Mdp]");
-			}
+			
 			
 			if($mdp==$tab["Mdp"]){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
 				$_SESSION["nom"]=$login; //Variable de session "nom"
@@ -30,11 +26,12 @@
 				header("Location:../index.php"); //redirection vers la page general.php
 				}	
 				elseif($mdp!=$resultat){
-					
-				}  
-
+					$c=3;
+				} 
+			}
 			$conn= NULL;
 			}
+		
 		}                 
 		catch(Exception $e){
 			die('Erreur : '.$e->getMessage());
@@ -67,16 +64,19 @@
      			<input type="submit"id="soumission" class="bouton" name="Exo2Envoyer" value="Envoyer"/>
      		</fieldset>
 			<?php
-			if ($resultat==NULL){
+	if(isset($_POST['Exo2Envoyer'])){
+
+			if (isset($a)==TRUE){
 				echo" <fieldset id='fieldset2'>
 				<h3>Vous n'êtes pas encore inscrit! </h3>
 				</fieldset>";
 			}
-			elseif($mdp!=$resultat){
+			elseif($c==3){
 				echo" <fieldset id='fieldset2'>
 				<h3>Votre mot de passe ou votre identifiant est invalide</h3>
 				</fieldset>";
 			}  
+		}
 			?>
      	</form>
 </div>

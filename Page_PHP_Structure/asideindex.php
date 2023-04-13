@@ -170,14 +170,13 @@
                   <div class='dropitem'>
                     <!--Début du premier item-->
                     <?php
-			//Exercice 2 : Question 5
 		
 			if(isset($_SESSION["authentifie"])==true){ // si un utilisateur est authentifié
 				echo"<button>
         <a
           class='al'
           href='Page_PHP_Structure/logout.php'
-          target='_blank'
+          
           >Deconnexion</a
         ><!--Lien vers les missions spatiales sur wikipedia-->
       </button>
@@ -189,7 +188,7 @@
         <a
           class='al'
           href='Page_PHP_Structure/Compteclient.php'
-          target='_blank'
+          
           >Information sur vous</a
         ><!--Lien renvoyant vers les fusées du sites science et vie-->
       </button>";
@@ -201,7 +200,7 @@
                       <a
                         class='al'
                         href='Page_PHP_Structure/connexionclients.php'
-                        target='_blank'
+                       
                         >Connexion</a
                       ><!--Lien vers les missions spatiales sur wikipedia-->
                     </button>
@@ -213,7 +212,7 @@
                       <a
                         class='al'
                         href="Page_PHP_Structure/inscription.php"
-                        target='_blank'
+                        
                         >Inscription</a
                       ><!--Lien renvoyant vers les fusées du sites science et vie-->
                     </button>
