@@ -16,9 +16,10 @@
             $req1->execute();
 			$resultat = $req1->fetchAll();
 			if ($resultat==NULL){
-				echo"<h1>Vous n'êtes pas encore inscrit! </h1>";
+				
 			}
-			else{foreach($resultat as $row){
+			else{
+				foreach($resultat as $row){
 				$tab=array("Mdp"=>"$row[Mdp]");
 			}
 			
@@ -29,7 +30,7 @@
 				header("Location:../index.php"); //redirection vers la page general.php
 				}	
 				elseif($mdp!=$resultat){
-					echo"<h1>Votre mot de passe ou votre identifiant est invalide</h1>";
+					
 				}  
 
 			$conn= NULL;
@@ -46,23 +47,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
- <!--  <?php  //include("header.php");?>
+ <?php  include("header.php");?>
   <link
       rel="stylesheet"
       href="../css_dossier/Css_Planètes/serv_client.css"
     >
 </head>
 <body>
-<?php  //include("aside.php");?>
-<div class="Main_grid">-->
+<?php  include("aside.php");?>
+<div class="Main_grid">
 		<!-- Formulaire d'authentification-->
-     	<form action="" method="post">
+     	<form action="" method="post" class="formLetter">
      		<fieldset>
      			<legend>Formulaire d'authentification</legend>
      			<label>Login :</label>
      			<input type="text"class="bouton" name="login" placeholder="Entrez votre login" required>
      			<label>Password :</label>
      			<input type="password"class="bouton" name="passwd"  placeholder="Entrez votre mot de passe" required>
-     			<input type="submit" class="bouton" name="Exo2Envoyer" value="Envoyer"/>
+     			<input type="submit"id="soumission" class="bouton" name="Exo2Envoyer" value="Envoyer"/>
      		</fieldset>
+			<?php
+			if ($resultat==NULL){
+				echo" <fieldset id='fieldset2'>
+				<h3>Vous n'êtes pas encore inscrit! </h3>
+				</fieldset>";
+			}
+			elseif($mdp!=$resultat){
+				echo" <fieldset id='fieldset2'>
+				<h3>Votre mot de passe ou votre identifiant est invalide</h3>
+				</fieldset>";
+			}  
+			?>
      	</form>
+</div>
+<div class="Footer_grid">
+        <!--Début du Footer appliqué a chaque page grâce a une class-->
+        <footer>
+        <?php  include("../Page_PHP_Structure/footer.php");?>
+        </footer>
+      </div>
+      <!--Fin du Footer-->
+    </div>
+  </body>
+</html>
+
