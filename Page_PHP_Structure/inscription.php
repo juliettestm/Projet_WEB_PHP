@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+	function valider_donnees($donnees){
+		$donnees=trim($donnees);
+		$donnees=stripslashes($donnees);
+		$donnees=htmlspecialchars($donnees);
+		return $donnees;
+	}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -56,12 +63,13 @@ session_start();
 	if(isset($_POST["Inscription"])){
 		try{
 			require("connexion.php");               
-			$nom=$_POST["nom"];
-			$prenom=$_POST["prenom"];
-			$email=$_POST["email"];
-			$date=$_POST["dateN"];
-			$login=$_POST["pseudo"];
-			$mdp=$_POST["Motdepasse"];
+			$nom=valider_donnees($_POST["nom"]);
+			$prenom=valider_donnees($_POST["prenom"]);
+			$email=valider_donnees($_POST["email"]);
+			$date=valider_donnees($_POST["dateN"]);
+			$login=valider_donnees($_POST["pseudo"]);
+			$mdp=valider_donnees($_POST["Motdepasse"]);
+
 			//Compléter ICI
 			$reqPrep1="INSERT INTO `Clients` ( `Nom`, `Prenom`, `Email`, `DateNaissance`,`pseudo`,`mdp`) VALUES ( '$nom','$prenom','$email','$date','$login','$mdp')";
 			$req1 =$conn->prepare($reqPrep1);
@@ -76,5 +84,4 @@ session_start();
 	}
 
 ?>
-    </body>
-</html>
+   

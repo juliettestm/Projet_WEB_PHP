@@ -1,0 +1,32 @@
+:root{ /*modification couleur, on crée des variables réutilisables*/
+	--violet-MAIN:#b052e2;
+	--violet-clair:#daa8ef;
+  --violet-foncé:#2b0427;
+}
+
+
+  h1{
+    margin-top: 15px;
+    color: white;
+  }
+table{
+position: relative;
+  height: 100%;
+  background: #242026;
+  -webkit-box-shadow: 0 15px 25px rgba(143, 124, 236, 0.7);
+          box-shadow: 0 15px 25px rgba(143, 124, 236, 0.7);
+  border-radius: 10px;
+}
+th,td{
+width: -webkit-max-content;
+width: -moz-max-content;
+width: max-content;
+border: 2px solid #b052e2;
+border-radius: 7px;
+background-color: var(--violet-foncé);
+-webkit-box-shadow: 0px 0px 15px #b052e2;
+        box-shadow: 0px 0px 15px #b052e2;
+padding: 10px;
+color: white;
+margin-top: 10px;
+}

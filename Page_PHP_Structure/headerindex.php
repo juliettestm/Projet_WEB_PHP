@@ -28,7 +28,7 @@
       rel='stylesheet'
       href='css_dossier/Css_Structuration/barredenav.css'
     >
-    <link rel='stylesheet' href='css_dossier/Css_Structuration/main.css' >
+    <link rel='stylesheet' href='./css_dossier/Css_Structuration/main.css' >
     <link rel='stylesheet' href='css_dossier/Css_Structuration/footer.css' >
     <!--Lien permettant d'accéder au code CSS-->
     <link rel='stylesheet' href='css_dossier/Css_Structuration/Aside.css' >

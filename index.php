@@ -18,7 +18,7 @@ session_start() ;
             <div class="item1">
               <?php
               if(isset($_SESSION["authentifie"])){
-                echo"<h1>Bienvenue $_SESSION[nom] sur la Voie Lactée !</h1>";
+                echo"<h1 >Bienvenue $_SESSION[nom] sur la Voie Lactée !</h1>";
               }
               else{
               ?>

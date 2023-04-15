@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <video
       id="background-video"
       muted=""
