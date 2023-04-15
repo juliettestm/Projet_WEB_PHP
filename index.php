@@ -16,7 +16,16 @@ session_start() ;
         <main>
           <div class="container-question">
             <div class="item1">
+              <?php
+              if(isset($_SESSION["authentifie"])){
+                echo"<h1>Bienvenue $_SESSION[nom] sur la Voie Lactée !</h1>";
+              }
+              else{
+              ?>
               <h1>Bienvenue sur la Voie Lactée !</h1>
+              <?php
+              }
+              ?>
               <h2>Le système solaire</h2>
               <p>
                 En dehors du Soleil lui-même, le Système solaire comprend huit
