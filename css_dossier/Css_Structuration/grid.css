@@ -38,7 +38,9 @@
   height: -moz-min-content;
   height: min-content;
 }
-
+.Bienvenue{
+  white-space: nowrap;
+}
 .Main_grid {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
