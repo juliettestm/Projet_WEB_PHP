@@ -36,7 +36,6 @@
     <link rel='stylesheet' href='css_dossier/Css_Planètes/style.css' >
     <?php
     if(isset($_POST['theme'])){
-      echo "<script>console.log('tata');</script>";
       //Créer le cookie pour y enregistrer le thème choisi par l'utilisateur
       setcookie("User_Pref",$_POST['Choixtheme'],time()+(365*24*3600),'/', '',false,true);
       header("Location:theme.php");
