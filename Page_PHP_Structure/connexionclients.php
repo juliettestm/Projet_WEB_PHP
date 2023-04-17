@@ -1,7 +1,7 @@
 <?php
 session_start();
 	//Script du traitement du formulaire d'authentification
-	if(isset($_POST['Exo2Envoyer'])){
+	if(isset($_POST['Connexion'])){
 		
 		$login=$_POST['login'];
 		$mdp=$_POST['passwd'];
@@ -54,17 +54,17 @@ session_start();
 <?php  include("aside.php");?>
 <div class="Main_grid">
 		<!-- Formulaire d'authentification-->
-     	<form action="" method="post" class="formLetter">
+     	<form action="" method="post"id="formLetter"  class="formLetter">
      		<fieldset>
      			<legend>Formulaire d'authentification</legend>
      			<label>Login :</label>
      			<input type="text"class="bouton" name="login" placeholder="Entrez votre login" required>
      			<label>Password :</label>
      			<input type="password"class="bouton" name="passwd"  placeholder="Entrez votre mot de passe" required>
-     			<input type="submit"id="soumission" class="bouton" name="Exo2Envoyer" value="Envoyer"/>
+     			<input type="submit"id="soumission" class="bouton" name="Connexion" value="Envoyer"/>
      		</fieldset>
 			<?php
-	if(isset($_POST['Exo2Envoyer'])){
+	if(isset($_POST['Connexion'])){
 
 			if (isset($a)==TRUE){
 				echo" <fieldset id='fieldset2'>

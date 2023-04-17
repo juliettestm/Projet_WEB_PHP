@@ -1,4 +1,4 @@
-<div class="footcont">
+<div class="footcont" id="footcont">
             <!--Début du contenu du footer diviser en 3 items-->
             <div class="footitem" id="footsec">
               <!--Début du premier item les réseaux sociaux-->
@@ -63,6 +63,7 @@
                 <!--Début de la liste non ordonée pour les questions-->
                 <li><a href="../Page_PHP_Planetes_Index/serv_client.php">Service client</a></li>
                 <li><a href="mention_leg.php">Mentions légales</a></li>
+                <li><a href="../Page_PHP_Structure/theme.php">Séléctionner le theme de votre site</a></li>
               </ul>
               <!--Fin de la liste non ordonée pour les questions-->
             </div>

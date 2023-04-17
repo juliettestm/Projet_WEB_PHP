@@ -29,24 +29,24 @@ die("Erreur : " . $e->getMessage());
 <?php  include("aside.php");?>
 <div class="Main_grid">
 <h1>Informations sur : <?php foreach($resultat as $cle=>$val){ echo "$val[Nom] $val[Prenom]"; ?></h1>
-	<table>
+	<table id='table'>
 		<tr>
-			<th>Email </th>
-			<td><?php echo "$val[Email]"; ?></td>
+			<th class='th'>Email </th>
+			<td class='td'><?php echo "$val[Email]"; ?></td>
 		</tr>
 		<tr>
-			<th>Date de naissance </th>
-			<td><?php echo "$val[DateNaissance]"; ?> </td>
+			<th class='th'>Date de naissance </th>
+			<td class='td'><?php echo "$val[DateNaissance]"; ?> </td>
 		</tr>
 		<tr>
-			<th>login </th>
-			<td><?php echo "$val[pseudo]"; }?> </td>
+			<th class='th'>login </th>
+			<td class='td'><?php echo "$val[pseudo]"; }?> </td>
 		</tr>
 	</table>
 
 
     <h1>Modifier mes informations</h1>
-		<form action="modifier.php" class="formLetter" method="post">
+		<form action="modifier.php" id="formLetter" class="formLetter" method="post">
 			<fieldset>
 				
 				<label for="nom">Nom : </label>

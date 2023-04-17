@@ -13,7 +13,7 @@
       <div class="Header_grid">
         <!--Début du header -->
         <header>
-          <nav class="navbar">
+          <nav class="navbar" id="navbar">
             <!--Début de la navbar divisé en 5 parties-->
             <button class="button">
               <!--premiere partie-->
@@ -235,7 +235,7 @@
       <!--Fin du header-->
       <div class="Aside">
         <!--Début de l'Aside-->
-        <div id="contener">
+        <div class="contener" id="contener">
           <div id="Titre">
             <h2>Les planètes</h2>
             <!--Afficher un titre-->

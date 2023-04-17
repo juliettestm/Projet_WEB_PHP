@@ -8,6 +8,7 @@ session_start() ;
 <html lang="fr">
 <head>
   <?php  include("Page_PHP_Structure/headerindex.php");?>
+  
 </head>
 <body>
 <?php  include("Page_PHP_Structure/asideindex.php");?>

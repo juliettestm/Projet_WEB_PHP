@@ -8,14 +8,14 @@ session_start();
 		return $donnees;
 	}
 
-		if($_SERVER['REQUEST_METHOD']== 'POST' && !empty($_POST['Envoyer'])){
+		if($_SERVER['REQUEST_METHOD']== 'POST' && !empty($_POST['servclient'])){
 			if($_FILES['image']['size']<100000000000 && ($_FILES['image']['type'] =="image/png" || $_FILES['image']['type'] =="image/gif" || $_FILES['image']['type'] =="image/jpg")){
 				move_uploaded_file($_FILES['image']['tmp_name'],"./images/". basename($_FILES['image']['name']));
                 $ok=1;
 			}
 		}  
         
-    if(isset($_POST['Envoyer'])){
+    if(isset($_POST['servclient'])){
       if(isset($_SESSION["authentifie"])==true){
       try{
         require("../Page_PHP_Structure/connexion.php");             
@@ -77,7 +77,7 @@ session_start();
         <!--Début du main-->
         <main>
           <div>
-            <form method="post" action="serv_client.php" enctype="multipart/form-data" class="formLetter">
+            <form method="post" action="serv_client.php" enctype="multipart/form-data" id="formLetter" class="formLetter">
               <fieldset id="fieldset2">
                 <legend>Votre demande</legend>
                 <!-- Deuxieme partie les Demande spécifique de l'utilisateur-->
@@ -85,13 +85,13 @@ session_start();
                 if(isset($_SESSION["authentifie"])==false){
                   echo'
                 <label for="email">Votre Email : </label>
-                <input type="email"class="bouton" id="email"required name="email"><br/>';
+                <input  type="email"class="bouton" id="email"required name="email"><br/>';
               
                 }
                 ?>
                 <label for="objet">Objet du message :</label
                 ><!--L'objet du message-->
-                <select id="objet" required name="objet" required>
+                <select class="objet" id="objet" required name="objet" required>
                   <option value="0">- Séléctionner -</option>
                   <!--A choix multiple-->
                   <option value="suggestion">Suggestions</option>
@@ -131,7 +131,7 @@ session_start();
                 <input
                   class="bouton"
                   type="submit"
-                  name="Envoyer"
+                  name="servclient"
                   id="soumission"
                   value="Envoyer"
                   
@@ -170,19 +170,19 @@ session_start();
                 $i=1;
                 foreach($resultat as $row){
                   echo"
-                    <table>
+                    <table id='table'>
                       <caption>Demande n°$i</caption>
                       <tr>
-                        <th>Objet </th>
-                        <td> $row[objet]</td>
+                        <th class='th'>Objet </th>
+                        <td class='td'> $row[objet]</td>
                       </tr>
                       <tr>
-                        <th>Description </th>
-                        <td>$row[description]</td>
+                        <th class='th'>Description </th>
+                        <td class='td'>$row[description]</td>
                       </tr>
                       <tr>
-                        <th>Image </th>
-                        <td><img src=\".\images\\" .basename($row['image']) . "\"></td>
+                        <th class='th'>Image </th>
+                        <td class='td'><img src=\".\images\\" .basename($row['image']) . "\"></td>
                       </tr>
                     </table>";
                     $i++;

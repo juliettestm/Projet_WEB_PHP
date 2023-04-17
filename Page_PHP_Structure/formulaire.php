@@ -71,7 +71,7 @@
 		
 		<tr>
 			<th>Connexion </th>
-			<td><?php echo $conn; ?> </td>
+			<td ><?php echo $conn; ?> </td>
 		</tr>
 		<tr>
 			<th>Planètes préférées </th>

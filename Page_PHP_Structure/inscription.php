@@ -68,7 +68,7 @@ if(isset($_POST["Inscription"])){
 <body>
 <?php  include("aside.php");?>
 <div class="Main_grid">
-		<form name="ajout" action="inscription.php"class="formLetter" method="post">
+		<form name="ajout" id="formLetter" action="inscription.php"class="formLetter" method="post">
 		<?php
 			if(isset($double)==TRUE){
 				echo" <fieldset id='fieldset2'>

@@ -78,13 +78,13 @@ fieldset > textarea:focus {
   margin-top: 5vh;
 }
 
-#objet{
+.objet{
   background-color: rgb(179, 125, 230);
   -webkit-box-shadow: 0px 0px 15px #b052e2;
           box-shadow: 0px 0px 15px #b052e2;
 }
 
-#objet:hover{ /*modification del'objet au survole de la souris*/
+.objet:hover{ /*modification del'objet au survole de la souris*/
   background-color: var(--violet-clair);
 }
 

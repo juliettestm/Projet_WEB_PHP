@@ -33,4 +33,21 @@
     <!--Lien permettant d'accéder au code CSS-->
     <link rel='stylesheet' href='css_dossier/Css_Structuration/Aside.css' >
     <link rel='stylesheet' href='css_dossier/Css_Structuration/grid.css' >
-    <link rel='stylesheet' href='css_dossier/Css_Planètes/style.css' ><!--Fin de la balise head-->
+    <link rel='stylesheet' href='css_dossier/Css_Planètes/style.css' >
+    <?php
+    if(isset($_POST['theme'])){
+      echo "<script>console.log('tata');</script>";
+      //Créer le cookie pour y enregistrer le thème choisi par l'utilisateur
+      setcookie("User_Pref",$_POST['Choixtheme'],time()+(365*24*3600),'/', '',false,true);
+      header("Location:theme.php");
+    }
+      if(isset($_COOKIE['User_Pref'])==TRUE){
+      $style=$_COOKIE['User_Pref'];	//on récupère le theme choisi enregistré dans le cookie
+      echo"<link rel='stylesheet' href ='css_dossier/CSS_Theme/$style.css'/>";
+		}
+		
+	
+		
+    
+ 	?>
+    <!--Fin de la balise head-->

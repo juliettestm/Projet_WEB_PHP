@@ -1,0 +1,195 @@
+#navbar{
+    z-index: 5;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  height: 72px;
+  background: #19191c;
+  color: #f9f9f9;
+    background: -o-linear-gradient(
+    135deg,
+    hsl(106, 68%, 28%),
+    #6dca3a,
+    #66e866,
+    #a1f091
+  );
+  background: linear-gradient(
+    -45deg,
+    hsl(106, 68%, 28%),
+    #6dca3a,
+    #66e866,
+    #a1f091
+  );
+  background-size: 400% 400%;
+  -webkit-animation: gradient 10s ease infinite;
+  animation: gradient 10s ease infinite;
+  border-radius: 0 0 50px 50px;
+  -webkit-box-shadow: 0px 0px 20px black;
+  box-shadow: 0px 0px 20px black;
+}
+
+  #footcont {/*contener pour un diplay grid de 4 footiem*/
+    /*propriété footer*/
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: auto;
+    width: auto;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: white;
+    /*On utilise la même animation que dans la nav bar */
+    background: -o-linear-gradient(
+      135deg,
+      hsl(106, 68%, 28%),
+      #6dca3a,
+      #66e866,
+      #a1f091
+    );
+    background: linear-gradient(
+      -45deg,
+      hsl(106, 68%, 28%),
+    #6dca3a,
+    #66e866,
+    #a1f091
+    );
+    background-size: 400% 400%;
+    -webkit-animation: gradient 10s ease infinite;
+    animation: gradient 10s ease infinite;
+    border-radius: 50px 0 0 0;
+    -webkit-box-shadow: 0px 0px 20px black;
+    box-shadow: 0px 0px 20px black;
+  }
+  @-webkit-keyframes gradient { /*Animation pour le background-linéaire*/
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  #objet{
+    background-color: #a1f091;
+    -webkit-box-shadow: 0px 0px 15px #5eea5e;
+            box-shadow: 0px 0px 15px #5eea5e;
+  }
+  
+  #objet:hover{ /*modification del'objet au survole de la souris*/
+    background-color:rgb(163, 243, 164);
+  }
+  #formLetter input[type="submit"],#formLetter input[type="reset"]{ /*modification bouton envoyer et effacer*/
+	font-weight:bold;
+	color:white;
+	background-color:#5ac832;
+	border:2px solid #76fc7f;
+	margin:10px;
+	padding:10px 20px; 
+	width:auto;
+	border-radius:10px;
+	-webkit-box-shadow:2px 2px 5px #91f78f;
+	        box-shadow:2px 2px 5px #91f78f;
+ }
+
+#formLetter input[type="submit"]:hover,#formLetter input[type="reset"]:hover{/*modification bouton envoyer et effacer au survole de la souris*/
+	color:rgb(255, 255, 255);
+	background-color:rgb(116, 241, 143);
+	border:2px solid #60c14d;
+	-webkit-box-shadow: 2px 2px 5px rgb(0, 0, 0);
+	        box-shadow: 2px 2px 5px rgb(0, 0, 0);
+	cursor:pointer; /*On modifie l'apparence du curseur lors du survol des inputs*/
+}
+.bouton { /*modification des inputs*/
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border: 2px solid #8dff98;
+    border-radius: 7px;
+    background-color: var(--violet-foncé);
+    -webkit-box-shadow: 0px 0px 15px #6ff583;
+            box-shadow: 0px 0px 15px #52e25c;
+    padding: 10px;
+    color: white;
+    margin-top: 10px;
+  }
+  #description { /*modification de la partie ou on peut écrire sur le questionnaire  */
+    width: 25%;
+    height: 50px;
+    margin-left: 10vw;
+    display: block;
+    background-color: #74e252;
+    border: solid 2px #89da82;
+    -webkit-transition: width 1s ease-in-out, height 1s ease-in-out;
+    -o-transition: width 1s ease-in-out, height 1s ease-in-out;/*on crée une transition avec les propriété width et height qui changent lors du focus*/
+    transition: width 1s ease-in-out, height 1s ease-in-out;
+  }
+  
+  #description:focus {
+    outline: none;
+    margin-left: 10vw;
+    border: solid 2px #7ff075;
+    background-color: #3cc22a;
+    color: white;
+    width: 50%;
+    height: 100px;
+  }
+  #table{
+    position: relative;
+      height: 100%;
+      background: #242026;
+      -webkit-box-shadow: 0 15px 25px #5cea3c;
+              box-shadow: 0 15px 25px #80ff9e;
+      border-radius: 10px;
+    }
+    .th,.td{
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border: 2px solid #57d26d;
+    border-radius: 7px;
+    background-color: var(--violet-foncé);
+    -webkit-box-shadow: 0px 0px 15px #5bd250;
+            box-shadow: 0px 0px 15px #5afa8a;
+    padding: 10px;
+    color: white;
+    margin-top: 10px;
+    }
+    #contener {
+        /* selecteur id "contener"*/
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content; /* Permet de prendre toute la place sur la hauteur*/
+        background: #242026; /*fond de couleur noir*/
+        -webkit-box-shadow: 0 15px 25px rgb(70, 255, 64);
+        box-shadow: 0 15px 25px rgb(83, 255, 112); /*Ombre en bordure de 0px a droite et en bas de 15px avec un effet de 25px et une couleur violette*/
+        border-radius: 10px; /*Bordure arrondi de 10px*/
+        color: aliceblue; /*couleur du texte blanc*/
+      }
