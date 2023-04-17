@@ -1,10 +1,73 @@
-!DOCTYPE html>
+<?php
+session_start();
+
+	function valider_donnees($donnees){
+		$donnees=trim($donnees);
+		$donnees=stripslashes($donnees);
+		$donnees=htmlspecialchars($donnees);
+		return $donnees;
+	}
+
+		if($_SERVER['REQUEST_METHOD']== 'POST' && !empty($_POST['Envoyer'])){
+			if($_FILES['image']['size']<100000000000 && ($_FILES['image']['type'] =="image/png" || $_FILES['image']['type'] =="image/gif" || $_FILES['image']['type'] =="image/jpg")){
+				move_uploaded_file($_FILES['image']['tmp_name'],"./images/". basename($_FILES['image']['name']));
+                $ok=1;
+			}
+		}  
+        
+    if(isset($_POST['Envoyer'])){
+      if(isset($_SESSION["authentifie"])==true){
+      try{
+        require("../Page_PHP_Structure/connexion.php");             
+        //Compléter ICI
+        $reqPrep1="SELECT Id,email FROM clients WHERE pseudo='$_SESSION[nom]'";
+        $req1 =$conn->prepare($reqPrep1);
+              $req1->execute();
+        $resultat = $req1->fetchAll();
+        $conn= NULL;
+        foreach($resultat as $row){
+          $tab=array("Id"=>"$row[Id]","email"=>"$row[email]");
+      }
+    }
+        catch(Exception $e){
+        die("Erreur : " . $e->getMessage());
+          }
+        }
+      else{
+        $tab=array("Id"=>"0","email"=>"$_POST[email]");
+      } 
+      try{
+        require("../Page_PHP_Structure/connexion.php");               
+        $objet=valider_donnees($_POST["objet"]);
+        $description=valider_donnees($_POST["description"]);
+        $image=$_FILES['image']['name'];
+    
+        //Compléter ICI
+        $reqPrep1="INSERT INTO `Suggestion` ( `ID`, `objet`, `description`,`email`,`image`) VALUES ( '$tab[Id]','$objet','$description','$tab[email]','$image')";
+        $req1 =$conn->prepare($reqPrep1);
+        $req1->execute();
+        
+        $conn= NULL;
+      
+      }    
+      catch(Exception $e){
+        die("Erreur : " . $e->getMessage());
+      }
+    }
+?>
+
+
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <?php  include("../Page_PHP_Structure/header.php");?>
   <link
       rel="stylesheet"
       href="../css_dossier/Css_Planètes/serv_client.css"
+    >
+    <link
+      rel="stylesheet"
+      href="../css_dossier/Css_Planètes/tableau.css"
     >
 </head>
 <body>
@@ -14,79 +77,35 @@
         <!--Début du main-->
         <main>
           <div>
-            <form method="post" action="#" class="formLetter">
-              <fieldset>
-                <legend>Informations sur vous</legend><!--Premiere partie les informationd sur l'utilisateur-->
-
-                <label>Genre:</label
-                ><!--Damande du genre-->
-                <br >
-                <br >
-                <input class="boutonrad" type="radio" name="genre" id="mme" >
-                <label for="mme">Féminin</label>
-                <br ><!--Avec la classe bouton l'identifiant Madame-->
-                <br >
-                <input class="boutonrad" type="radio" name="genre" id="mr" >
-                <label for="mr">Masculin</label>
-                <!--Avec la classe bouton l'identifiant Monsieur-->
-                <br ><br >
-
-                <label for="nom">Nom :</label
-                ><!--Demande du nom-->
-                <input
-                  required
-                  class="bouton"
-                  type="text"
-                  name="nom"
-                  id="nom"
-                  placeholder="Votre nom"
-                ><!-- l'utilisateur va remplir son nom dans l'input -->
-                <br ><br >
-
-                <label for="prenom">Prénom :</label
-                ><!--Demande du prénom-->
-                <input
-                  required
-                  class="bouton"
-                  type="text"
-                  name="prenom"
-                  id="prenom"
-                  placeholder="Votre prénom"
-                ><!-- l'utilisateur va rentrer son prénom dans l'input-->
-                <br ><br >
-
-                <label for="courriel">Courriel : </label
-                ><!-- Demande du courier-->
-                <input
-                  required
-                  class="bouton"
-                  type="email"
-                  name="courriel"
-                  id="courriel"
-                  placeholder="Mail"
-                ><!-- l'utilisateur va rentrer son couriel dans l'input-->
-              </fieldset>
+            <form method="post" action="serv_client.php" enctype="multipart/form-data" class="formLetter">
               <fieldset id="fieldset2">
                 <legend>Votre demande</legend>
                 <!-- Deuxieme partie les Demande spécifique de l'utilisateur-->
-
+                <?php
+                if(isset($_SESSION["authentifie"])==false){
+                  echo'
+                <label for="email">Votre Email : </label>
+                <input type="email"class="bouton" id="email"required name="email"><br/>';
+              
+                }
+                ?>
                 <label for="objet">Objet du message :</label
                 ><!--L'objet du message-->
-                <select id="objet" name="objet" required>
+                <select id="objet" required name="objet" required>
                   <option value="0">- Séléctionner -</option>
                   <!--A choix multiple-->
-                  <option value="sugg">Suggestions</option>
+                  <option value="suggestion">Suggestions</option>
                   <!--Premier choix suggestion -->
-                  <option value="recl">Reclamations</option>
+                  <option value="reclamation">Reclamations</option>
                   <!-- Deuxieme choix Reclamation-->
-                  <option value="insc">Inscription</option>
+                  <option value="inscription">Inscription</option>
                   <!--Troisieme choix Inscription-->
-                  <option value="prob">Problèmes techniques</option>
+                  <option value="problemes techniques">Problèmes techniques</option>
                   <!--Quatrieme choix probléme technique-->
-                  <option value="autr">Autre...</option>
+                  <option value="autre">Autre...</option>
                 </select>
                 <br ><br >
-                <label for="description">Message :</label>
+                <label required for="description">Message :</label>
                 <br ><!--Le Message-->
                 <textarea
                   rows="10"
@@ -98,25 +117,85 @@
                 ><!--A remplir pour nous expliquer le besoin de l'utilisateur-->
                 <br ><br >
 
-                <label for="document">Document:</label
+                <label for="document">Image permettant d'illustré votre demande:</label
                 ><!--Les documents si l'utilisateur veut en ajouter-->
                 <input
                   class="bouton"
-                  type="file"
-                  id="document"
-                  name="document"
+                  type="file" 
+                  name="image"
+                  accept="image/*"
                 >
+                
                 <br ><br >
+                
                 <input
                   class="bouton"
                   type="submit"
                   name="Envoyer"
                   id="soumission"
                   value="Envoyer"
+                  
                 ><!--Le bouton envoyer -->
                 <input class="bouton" type="reset" ><!--Ou le bouton Effacer-->
+               
+                
               </fieldset>
             </form>
+            <?php
+            if(isset($_SESSION["authentifie"])==true ){
+              try{
+                require("../Page_PHP_Structure/connexion.php");             
+                //Compléter ICI
+                $reqPrep1="SELECT Id FROM clients WHERE pseudo='$_SESSION[nom]'";
+                $req1 =$conn->prepare($reqPrep1);
+                      $req1->execute();
+                $resultat = $req1->fetchAll();
+                $conn= NULL;
+                foreach($resultat as $row){
+                  $tab=array("Id"=>"$row[Id]");
+              }
+            }
+                catch(Exception $e){
+                die("Erreur : " . $e->getMessage());
+                  }
+              try{
+                require("../Page_PHP_Structure/connexion.php");             
+                //Compléter ICI
+                $reqPrep1="SELECT objet,description,image FROM Suggestion WHERE Id='$tab[Id]'";
+                $req1 =$conn->prepare($reqPrep1);
+                      $req1->execute();
+                $resultat = $req1->fetchAll();
+                $conn= NULL;
+                echo"<h1>Vos Demande</h1>";
+                $i=1;
+                foreach($resultat as $row){
+                  echo"
+                    <table>
+                      <caption>Demande n°$i</caption>
+                      <tr>
+                        <th>Objet </th>
+                        <td> $row[objet]</td>
+                      </tr>
+                      <tr>
+                        <th>Description </th>
+                        <td>$row[description]</td>
+                      </tr>
+                      <tr>
+                        <th>Image </th>
+                        <td><img src=\".\images\\" .basename($row['image']) . "\"></td>
+                      </tr>
+                    </table>";
+                    $i++;
+              }
+            }
+            catch(Exception $e){
+              die("Erreur : " . $e->getMessage());
+            }
+            }
+            
+          
+            
+            ?>
           </div>
         </main>
       </div>
