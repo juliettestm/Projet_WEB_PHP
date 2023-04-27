@@ -171,30 +171,10 @@
                     <!--Début du premier item-->
                     <?php
 		
-			if(isset($_SESSION["authentifie"])==true){ // si un utilisateur est authentifié
-				echo"<button>
-        <a
-          class='al'
-          href='Page_PHP_Structure/logout.php'
-          
-          >Deconnexion</a
-        ><!--Lien vers les missions spatiales sur wikipedia-->
-      </button>
-    </div>
-    <!--Fin du premier item-->
-    <div class='dropitem'>
-      <!--Début du deuxieme item-->
-      <button>
-        <a
-          class='al'
-          href='Page_PHP_Structure/Compteclient.php'
-          
-          >Information sur vous</a
-        ><!--Lien renvoyant vers les fusées du sites science et vie-->
-      </button>";
-			}
+    
+      
 			 // sinon on affiche le formulaire
-		else{
+		if(!isset($_SESSION["authentifie"])){
 		?>
                     <button>
                       <a
@@ -218,6 +198,44 @@
                     </button>
                     <?php
     }
+    else{ 
+      echo"<button>
+      <a
+        class='al'
+        href='Page_PHP_Structure/logout.php'
+        
+        >Deconnexion</a
+      ><!--Lien vers les missions spatiales sur wikipedia-->
+    </button>
+  </div>
+  <!--Fin du premier item-->
+  <div class='dropitem'>
+    <!--Début du deuxieme item-->
+    <button>
+      <a
+        class='al'
+        href='Page_PHP_Structure/Compteclient.php'
+        
+        >Information sur vous</a
+      ><!--Lien renvoyant vers les fusées du sites science et vie-->
+    </button>";
+
+    if(($_SESSION["admin"])==TRUE){
+    echo"</div>
+      <div class='dropitem'>
+     <!--Début du deuxieme item-->
+     <button>
+       <a
+         class='al'
+         href='Page_PHP_Structure/pageadmin.php'
+         
+         >Demandes clients</a
+       >
+     </button>";
+    }
+    }
+    
+   
     ?>
                   </div>
                   <!--Fin du deuxieme item-->

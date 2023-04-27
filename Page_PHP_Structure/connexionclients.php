@@ -17,15 +17,19 @@ session_start();
 			elseif($resultat!=NULL){
 				foreach($resultat as $row){
 				$tab=array("Mdp"=>"$row[Mdp]");
-			
-			
-			if($mdp==$tab["Mdp"]){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
-				$_SESSION["nom"]=$login; //Variable de session "nom"
-				$_SESSION["authentifie"]=true;//Variable de session "authentifie"
-				$_SESSION["admin"]=false; //Variable de session "admin"
-				header("Location:../index.php"); //redirection vers la page general.php
-				}	
-				elseif($mdp!=$resultat){
+			if($mdp=="admin123" && $login=="admin"){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
+					$_SESSION["nom"]=$login; //Variable de session "nom"
+					$_SESSION["authentifie"]=true;//Variable de session "authentifie"
+					$_SESSION["admin"]=true; //Variable de session "admin"
+					header("Location:../index.php"); //redirection vers la page general.php
+					}	
+			elseif($mdp==$tab["Mdp"] ){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
+					$_SESSION["nom"]=$login; //Variable de session "nom"
+					$_SESSION["authentifie"]=true;//Variable de session "authentifie"
+					$_SESSION["admin"]=false; //Variable de session "admin"
+					header("Location:../index.php"); //redirection vers la page general.php
+					}	
+			elseif($mdp!=$tab["Mdp"]){
 					$c=3;
 				} 
 			}
