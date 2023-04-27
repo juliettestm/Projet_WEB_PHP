@@ -121,6 +121,7 @@ session_start();
                 ><!--Les documents si l'utilisateur veut en ajouter-->
                 <input
                   class="bouton"
+                  id="bouton"
                   type="file" 
                   name="image"
                   accept="image/*"

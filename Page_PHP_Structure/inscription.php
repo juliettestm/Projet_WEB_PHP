@@ -89,13 +89,13 @@ if(isset($_POST["Inscription"])){
 				<input type="email"class="bouton" id="email"required name="email"><br/>
 				
 				<label for="dateN">Date de naissance : </label>
-				<input type="date" class="bouton"id="dateN" required name="dateN"><br/>
+				<input type="date" class="bouton"id="DateN" required name="dateN"><br/>
 
 				<label for="pseudo">Pseudo : </label>
 				<input type="text" class="bouton"id="pseudo"required name="pseudo"><br/>
 
 				<label for="Motdepasse">Votre mot de passe : </label>
-				<input type="password"class="bouton" id="Motdepasse"required name="Motdepasse"><br/>
+				<input type="password"class="bouton" id="pwd"required name="Motdepasse"><br/>
 
 				<input Type="submit" class="bouton" name="Inscription" required value="Inscription">
 			</fieldset>

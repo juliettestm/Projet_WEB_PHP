@@ -127,7 +127,7 @@
 	        box-shadow: 2px 2px 5px rgb(0, 0, 0);
 	cursor:pointer; /*On modifie l'apparence du curseur lors du survol des inputs*/
 }
-.bouton { /*modification des inputs*/
+#bouton,#nom,#prenom,#pseudo,#email,#DateN,#pwd { /*modification des inputs*/
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;

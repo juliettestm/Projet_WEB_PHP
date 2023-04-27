@@ -47,7 +47,7 @@ die("Erreur : " . $e->getMessage());
 
     <h1>Modifier mes informations</h1>
 		<form action="modifier.php" id="formLetter" class="formLetter" method="post">
-			<fieldset>
+			<fieldset >
 				
 				<label for="nom">Nom : </label>
 				<input type="text"class="bouton" id="nom" name="nom" value="<?php  echo $val['Nom'];  ?>"><br/>

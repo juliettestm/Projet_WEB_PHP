@@ -34,6 +34,17 @@ h1{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border: 2px solid #b052e2;
+  border-radius: 7px;
+  background-color: var(--violet-foncé);
+  -webkit-box-shadow: 0px 0px 15px #b052e2;
+          box-shadow: 0px 0px 15px #b052e2;
+  padding: 10px;
+  color: white;
+  margin-top: 10px;
 }
   
 .boutonrad {
