@@ -242,7 +242,7 @@
           </div>
           <div class="contener_list">
             <!--Container de l'image des planetes-->
-            <a class="gauche" href="soleil.php" title="Soleil">
+            <a class="gauche" href="../Page_PHP_Planetes_Index/soleil.php" title="Soleil">
               <img
                 id="Soleil"
                 class="imageaside"
@@ -250,7 +250,7 @@
                 alt="Image soleil"
               ><!--Affichage de l'image du soleil avec un lien qui permet d'accéder a la page php du soleil-->
             </a>
-            <a href="mercure.php" title="Mercure">
+            <a href="../Page_PHP_Planetes_Index/mercure.php" title="Mercure">
               <img
                 id="Mercure"
                 class="imageaside"
@@ -258,7 +258,7 @@
                 alt="Image mercure"
               ><!--Affichage de l'image du mercure avec un lien qui permet d'accéder a la page php du mercure-->
             </a>
-            <a href="venus.php" title="Vénus">
+            <a href="../Page_PHP_Planetes_Index/venus.php" title="Vénus">
               <img
                 id="Venus"
                 class="imageaside"
@@ -266,7 +266,7 @@
                 alt="Image Venus"
               ><!--Affichage de l'image du Vénus avec un lien qui permet d'accéder a la page php du Vénus-->
             </a>
-            <a href="terre.php" title="Terre">
+            <a href="../Page_PHP_Planetes_Index/terre.php" title="Terre">
               <img
                 id="Terre"
                 class="imageaside"
@@ -274,7 +274,7 @@
                 alt="Image Terre"
               ><!--Affichage de l'image du Terre avec un lien qui permet d'accéder a la page php du Terre-->
             </a>
-            <a href="mars.php" title="Mars">
+            <a href="../Page_PHP_Planetes_Index/mars.php" title="Mars">
               <img
                 id="Mars"
                 class="imageaside"
@@ -282,7 +282,7 @@
                 alt="Image Mars"
               ><!--Affichage de l'image du Mars avec un lien qui permet d'accéder a la page php du Mars-->
             </a>
-            <a href="jupiter.php" title="Jupiter">
+            <a href="../Page_PHP_Planetes_Index/jupiter.php" title="Jupiter">
               <img
                 id="Jupiter"
                 class="imageaside"
@@ -290,7 +290,7 @@
                 alt="Image Jupiter"
               ><!--Affichage de l'image du Jupiter avec un lien qui permet d'accéder a la page php du Jupiter-->
             </a>
-            <a href="saturne.php" title="Saturne">
+            <a href="../Page_PHP_Planetes_Index/saturne.php" title="Saturne">
               <img
                 id="Saturne"
                 class="imageaside"
@@ -298,7 +298,7 @@
                 alt="Image Saturne"
               ><!--Affichage de l'image du Saturne avec un lien qui permet d'accéder a la page php du Saturne-->
             </a>
-            <a href="uranus.php" title="Uranus">
+            <a href="../Page_PHP_Planetes_Index/uranus.php" title="Uranus">
               <img
                 id="Uranus"
                 class="imageaside"
@@ -306,7 +306,7 @@
                 alt="Image Uranus"
               ><!--Affichage de l'image du Uranus avec un lien qui permet d'accéder a la page php du Uranus-->
             </a>
-            <a href="neptune.php" title="Neptune">
+            <a href="../Page_PHP_Planetes_Index/neptune.php" title="Neptune">
               <img
                 id="Neptune"
                 class="imageaside"
