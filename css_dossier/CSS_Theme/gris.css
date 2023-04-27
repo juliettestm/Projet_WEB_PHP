@@ -12,17 +12,17 @@
   color: #f9f9f9;
     background: -o-linear-gradient(
     135deg,
-    #6e3e00,
-    #ad7229,
-    #d78232,
-    #ffad4e
+    #3a3939,
+    #676665,
+    #908f8e,
+    #cfcdcc
   );
   background: linear-gradient(
     -45deg,
-    #6e3e00,
-    #ad7229,
-    #d78232,
-    #ffad4e
+    #3a3939,
+    #676665,
+    #908f8e,
+    #cfcdcc
   );
   background-size: 400% 400%;
   -webkit-animation: gradient 10s ease infinite;
@@ -55,17 +55,17 @@
     /*On utilise la même animation que dans la nav bar */
     background: -o-linear-gradient(
       135deg,
-      #6e3e00,
-    #ad7229,
-    #d78232,
-    #ffad4e
+      #3a3939,
+    #676665,
+    #908f8e,
+    #cfcdcc
     );
     background: linear-gradient(
       -45deg,
-      #6e3e00,
-    #ad7229,
-    #d78232,
-    #ffad4e
+      #3a3939,
+    #676665,
+    #908f8e,
+    #cfcdcc
     );
     background-size: 400% 400%;
     -webkit-animation: gradient 10s ease infinite;
@@ -98,31 +98,31 @@
     }
   }
   #objet{
-    background-color: rgb(255, 178, 84);
-    -webkit-box-shadow: 0px 0px 15px #f1a253;
-            box-shadow: 0px 0px 15px #f1a253;
+    background-color: rgb(88, 86, 84);
+    -webkit-box-shadow: 0px 0px 15px #68625b;
+            box-shadow: 0px 0px 15px #848281;
   }
   
   #objet:hover{ /*modification del'objet au survole de la souris*/
-    background-color:rgb(255, 191, 122);
+    background-color:rgb(151, 148, 145);
   }
   #formLetter input[type="submit"],#formLetter input[type="reset"]{ /*modification bouton envoyer et effacer*/
 	font-weight:bold;
 	color:white;
-	background-color:#f1a253;
-	border:2px solid #f1a253;
+	background-color:#8f8d8c;
+	border:2px solid #8b8988;
 	margin:10px;
 	padding:10px 20px; 
 	width:auto;
 	border-radius:10px;
-	-webkit-box-shadow:2px 2px 5px #f1a253;
-	        box-shadow:2px 2px 5px #f1a253; 
+	-webkit-box-shadow:2px 2px 5px #86817d;
+	        box-shadow:2px 2px 5px #848280; 
  }
 
 #formLetter input[type="submit"]:hover,#formLetter input[type="reset"]:hover{/*modification bouton envoyer et effacer au survole de la souris*/
 	color:rgb(255, 255, 255);
-	background-color:rgb(255, 203, 124);
-	border:2px solid #f1a253;
+	background-color:rgb(174, 172, 169);
+	border:2px solid #60605f;
 	-webkit-box-shadow: 2px 2px 5px rgb(0, 0, 0);
 	        box-shadow: 2px 2px 5px rgb(0, 0, 0);
 	cursor:pointer; /*On modifie l'apparence du curseur lors du survol des inputs*/
@@ -131,11 +131,11 @@
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    border: 2px solid #ef9e48;
+    border: 2px solid #696765;
     border-radius: 7px;
     background-color: var(--violet-foncé);
-    -webkit-box-shadow: 0px 0px 15px #e2ab52;
-            box-shadow: 0px 0px 15px #e2ab52;
+    -webkit-box-shadow: 0px 0px 15px #979591;
+            box-shadow: 0px 0px 15px #767471;
     padding: 10px;
     color: white;
     margin-top: 10px;
@@ -145,8 +145,8 @@
     height: 50px;
     margin-left: 10vw;
     display: block;
-    background-color: #e2ab52;
-    border: solid 2px #ffce80;
+    background-color: #5e5d5d;
+    border: solid 2px #908d88;
     -webkit-transition: width 1s ease-in-out, height 1s ease-in-out;
     -o-transition: width 1s ease-in-out, height 1s ease-in-out;/*on crée une transition avec les propriété width et height qui changent lors du focus*/
     transition: width 1s ease-in-out, height 1s ease-in-out;
@@ -155,8 +155,8 @@
   #description:focus {
     outline: none;
     margin-left: 10vw;
-    border: solid 2px #e2ab52;
-    background-color: #c2882a;
+    border: solid 2px #716e69;
+    background-color: #8e8b86;
     color: white;
     width: 50%;
     height: 100px;
@@ -165,19 +165,19 @@
     position: relative;
       height: 100%;
       background: #242026;
-      -webkit-box-shadow: 0 15px 25px #ffce80;
-              box-shadow: 0 15px 25px #ffce80;
+      -webkit-box-shadow: 0 15px 25px #9e9b97;
+              box-shadow: 0 15px 25px #7a7876;
       border-radius: 10px;
     }
     .th,.td{
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    border: 2px solid #ffbf5e;
+    border: 2px solid #878786;
     border-radius: 7px;
     background-color: var(--violet-foncé);
-    -webkit-box-shadow: 0px 0px 15px #fab55a;
-            box-shadow: 0px 0px 15px #fab55a;
+    -webkit-box-shadow: 0px 0px 15px #5e5d5c;
+            box-shadow: 0px 0px 15px #858381;
     padding: 10px;
     color: white;
     margin-top: 10px;
@@ -188,8 +188,8 @@
         height: -moz-max-content;
         height: max-content; /* Permet de prendre toute la place sur la hauteur*/
         background: #242026; /*fond de couleur noir*/
-        -webkit-box-shadow: 0 15px 25px rgb(255, 182, 64);
-        box-shadow: 0 15px 25px rgb(255, 175, 83); /*Ombre en bordure de 0px a droite et en bas de 15px avec un effet de 25px et une couleur violette*/
+        -webkit-box-shadow: 0 15px 25px rgb(125, 123, 119);
+        box-shadow: 0 15px 25px rgb(133, 132, 130); /*Ombre en bordure de 0px a droite et en bas de 15px avec un effet de 25px et une couleur violette*/
         border-radius: 10px; /*Bordure arrondi de 10px*/
         color: aliceblue; /*couleur du texte blanc*/
       }
