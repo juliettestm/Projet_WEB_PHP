@@ -12,8 +12,12 @@ try{
 catch(Exception $e){
 die("Erreur : " . $e->getMessage());
 }
+//ETAPE 2: Mettre à jours les données de la BD selon les valeurs modifiées envoyées par le formulaire ci-dessous
 
 ?>
+
+
+
 <head>
  <?php  include("header.php");?>
  <link
@@ -28,6 +32,7 @@ die("Erreur : " . $e->getMessage());
 <body>
 <?php  include("aside.php");?>
 <div class="Main_grid">
+
 <h1>Informations sur : <?php foreach($resultat as $cle=>$val){ echo "$val[Nom] $val[Prenom]"; ?></h1>
 	<table id='table'>
 		<tr>
@@ -46,7 +51,7 @@ die("Erreur : " . $e->getMessage());
 
 
     <h1>Modifier mes informations</h1>
-		<form action="modifier.php" id="formLetter" class="formLetter" method="post">
+		<form action="Compteclient.php" id="formLetter" class="formLetter" method="post">
 			<fieldset >
 				
 				<label for="nom">Nom : </label>
@@ -64,7 +69,70 @@ die("Erreur : " . $e->getMessage());
                 <label for="pseudo">login : </label>
 				<input type="text" class="bouton"id="pseudo" name="pseudo" value="<?php echo $val['pseudo'];  ?>"><br/>
 				<input Type="submit"class="bouton" name="Modifier" value="Modifier">
-			</fieldset>
+</fieldset>
+<?php
+if(isset($_POST["Modifier"])){
+	try{
+		require("connexion.php"); 
+		$reqPrep="SELECT pseudo FROM clients ";
+		$req =$conn->prepare($reqPrep);
+		$req->execute();
+		$resultat = $req->fetchAll();
+		$conn= NULL;
+		} 
+		catch(Exception $e){
+			die("Erreur : " . $e->getMessage());
+			}
+		foreach($resultat as $row) {
+			if(($row['pseudo'])==($_POST["pseudo"])){
+				$double=1;
+				echo" <fieldset id='fieldset2'>
+				<h3>Ce pseudo: $_POST[pseudo] existe déjà ! </h3>
+				</fieldset>";
+			}
+		}
+if(isset($double)==FALSE){
+try{
+	require("connexion.php");             
+	
+	//Compléter ICI
+	$reqPrep1="SELECT Id FROM clients WHERE pseudo='$_SESSION[nom]'";
+	$req1 =$conn->prepare($reqPrep1);
+	$req1->execute();
+	$resultat = $req1->fetchAll();
+	$conn= NULL;
+}                 
+catch(Exception $e){
+	die("Erreur : " . $e->getMessage());
+}
+try{
+	require("connexion.php"); 
+	foreach($resultat as $row){
+	//Compléter ICI
+	$req1 = $conn->prepare("UPDATE clients SET nom = :nom, prenom = :prenom, email = :email, dateNaissance = :dateN ,pseudo= :pseudo WHERE id=$row[Id]");
+	
+	$req1->execute([
+		"nom" => $_POST["nom"],
+		"prenom" => $_POST["prenom"],
+		"email" => $_POST["email"],
+		"dateN" => $_POST["dateN"],
+		"pseudo" => $_POST["pseudo"],
+	]);}
+	$conn= NULL;	
+	$_SESSION['nom']=$_POST["pseudo"];
+	
+	echo" <fieldset id='fieldset2'>
+		<h3>Votre compte a bien été modifié</h3>
+		</fieldset>";
+		header("Location:Compteclient.php");
+}                 
+catch(Exception $e){
+	die("Erreur : " . $e->getMessage());
+}
+}
+		
+	}
+	?>
 		</form>
         </div>
 		<div class="Footer_grid">
