@@ -117,7 +117,13 @@ session_start();
           <!--Fin des questions-->
         </main>
       </div>
-
+      <div class="Image_grid">
+        <!--Début du grid Image-->
+        <img
+          src="../Images/Images.png/marscoin.png"
+          alt="Imade de Mars"
+        ><!--Affichage de la planete Mars dans le coin en bas de page au footer-->
+      </div>
 <div class="Footer_grid">
         <!--Début du Footer appliqué a chaque page grâce a une class-->
         <footer>

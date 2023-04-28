@@ -9,7 +9,7 @@ session_start();
 	}
 
 		if($_SERVER['REQUEST_METHOD']== 'POST' && !empty($_POST['servclient'])){
-			if($_FILES['image']['size']<100000000000 && ($_FILES['image']['type'] =="image/png" || $_FILES['image']['type'] =="image/gif" || $_FILES['image']['type'] =="image/jpg")){
+			if($_FILES['image']['size']<90000000000000000000000000000000000000000000000 && ($_FILES['image']['type'] =="image/jpeg" || $_FILES['image']['type'] =="image/gif" || $_FILES['image']['type'] =="image/png")){
 				move_uploaded_file($_FILES['image']['tmp_name'],"./images/". basename($_FILES['image']['name']));
                 $ok=1;
 			}
@@ -117,7 +117,7 @@ session_start();
                 ><!--A remplir pour nous expliquer le besoin de l'utilisateur-->
                 <br ><br >
 
-                <label for="document">Image permettant d'illustré votre demande:</label
+                <label for="document">Image permettant d'illustrer votre demande:</label
                 ><!--Les documents si l'utilisateur veut en ajouter-->
                 <input
                   class="bouton"

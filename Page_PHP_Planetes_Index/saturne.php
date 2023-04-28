@@ -148,7 +148,20 @@ session_start();
           <!--Fin des questions-->
         </main>
       </div>
-
+      <div class="Image_grid">
+        <!--Début du grid Image-->
+        <div class="Image_1">
+          <img
+            src="../Images/Images.jpg/anneauxsaturne.jpeg"
+            alt="anneaux saturne "
+            id="Image1"
+          >
+        </div>
+        <img
+          src="../Images/Images.png/saturnecoin.png"
+          alt="Image de Saturne"
+        ><!--Affichage de la planete Saturne dans le coin en bas de page au footer-->
+      </div>
 <div class="Footer_grid">
         <!--Début du Footer appliqué a chaque page grâce a une class-->
         <footer>

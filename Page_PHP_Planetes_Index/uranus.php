@@ -129,7 +129,13 @@ session_start();
           <!--Fin des questions-->
         </main>
       </div>
-
+      <div class="Image_grid">
+        <!--Début du main-->
+        <img
+          src="../Images/Images.png/uranuscoin.png"
+          alt="Image d'uranus"
+        ><!--Affichage de la planete Uranus dans le coin en bas de page au footer-->
+      </div>
 <div class="Footer_grid">
         <!--Début du Footer appliqué a chaque page grâce a une class-->
         <footer>

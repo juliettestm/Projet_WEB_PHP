@@ -136,7 +136,13 @@ session_start();
           <!--Fin des question-->
         </main>
       </div>
-
+      <div class="Image_grid">
+        <!--Début de l'image grid-->
+        <img
+          src="../Images/Images.png/mercurecoin.png"
+          alt="Image de Mercure"
+        ><!--Affichage de la planete Mercure dans le coin en bas de page au footer-->
+      </div>
 <div class="Footer_grid">
         <!--Début du Footer appliqué a chaque page grâce a une class-->
         <footer>

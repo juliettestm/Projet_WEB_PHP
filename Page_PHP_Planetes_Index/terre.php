@@ -103,7 +103,15 @@ session_start();
           </div>
         </main>
       </div>
+      <div class="Image_grid">
+        <!--Début du grid Image-->
+    
 
+        <img
+          src="../Images/Images.png/terrecoin.png"
+          alt="image terre"
+        ><!--Affichage de la planete Terre dans le coin en bas de page au footer-->
+      </div>
 <div class="Footer_grid">
         <!--Début du Footer appliqué a chaque page grâce a une class-->
         <footer>

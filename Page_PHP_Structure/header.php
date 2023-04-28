@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="../css_dossier/Css_Structuration/grid.css" >
     <link
       rel="stylesheet"
-      href="../css_dossier/Css_Planètes/jupiter.css"
+      href="../css_dossier/Css_Planètes/planetes.css"
     >
    
     <?php

@@ -101,7 +101,15 @@ session_start();
           <!--Fin des questions-->
         </main>
       </div>
-
+      <div class="Image_grid">
+        <!--Début du grid Image-->
+        <img
+          src="../Images/Images.jpg/struc_soleil.jpg"
+          alt="structure du soleil"
+          id="soleil"
+        ><!--Affichage de l'image de la structure du soleil -->
+      </div>
+      <!--Fin du grid Image-->
 <div class="Footer_grid">
         <!--Début du Footer appliqué a chaque page grâce a une class-->
         <footer>

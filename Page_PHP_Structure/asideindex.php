@@ -216,7 +216,7 @@
         class='al'
         href='Page_PHP_Structure/Compteclient.php'
         
-        >Information sur vous</a
+        >Informations sur vous</a
       ><!--Lien renvoyant vers les fusées du sites science et vie-->
     </button>";
 

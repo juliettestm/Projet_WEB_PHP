@@ -139,7 +139,19 @@ session_start();
           <!--Fin des questions-->
         </main>
       </div>
-
+      <div class="Image_grid">
+        <div class="Image_1">
+          <img
+            src="../Images/Images.jpg/compositionneptune.jpg"
+            alt="composition neptune "
+            id="Image1"
+          >><!--Affiche la composition de neptune-->
+        </div>
+        <img
+          src="../Images/Images.png/neptunecoin.png"
+          alt="Image de Neptune"
+        >
+      </div>
 <div class="Footer_grid">
         <!--Début du Footer appliqué a chaque page grâce a une class-->
         <footer>

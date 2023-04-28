@@ -91,7 +91,7 @@ if(isset($_POST["Modifier"])){
 				</fieldset>";
 			}
 		}
-if(isset($double)==FALSE){
+if(isset($double)==FALSE || $_POST["pseudo"]==$_SESSION['nom'] ){
 try{
 	require("connexion.php");             
 	

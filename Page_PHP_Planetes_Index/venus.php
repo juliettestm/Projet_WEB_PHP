@@ -143,7 +143,13 @@ session_start();
           <!--Fin des questions-->
         </main>
       </div>
-
+      <div class="Image_grid">
+        <!--Début de l'image grid-->
+        <img
+          src="../Images/Images.png/venuscoin.png"
+          alt="Image de Venus"
+        ><!--Affichage de la planete vénus dans le coin en bas de page au footer-->
+      </div>
 <div class="Footer_grid">
         <!--Début du Footer appliqué a chaque page grâce a une class-->
         <footer>

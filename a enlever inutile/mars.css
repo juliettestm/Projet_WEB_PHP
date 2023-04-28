@@ -1,0 +1,166 @@
+#Mars {
+  /* selecteur id "Mars"*/
+  border: 5px double #b0f2f3; /* deux bordure blanche de taille 5 pixel */
+  border-radius: 100%; /*permet de faire une bordure autour de la planete*/
+}
+
+@media only screen and (min-width: 430px) {
+  /*Adaptation de la taille de la page entre téléphone et tablette*/
+  .Container_grid {
+    display: -ms-grid;
+    display: grid; /*utilisation d'une grille*/
+    -ms-grid-columns: 10% 0px 10% 0px 1fr 0px 1fr 0px 1fr;
+    grid-template-columns: 10% 10% 1fr 1fr 1fr; /*dimension des colognes*/
+    -ms-grid-rows: -webkit-min-content 0px auto 0px 1fr 0px auto 0px auto;
+    -ms-grid-rows: min-content 0px auto 0px 1fr 0px auto 0px auto;
+    grid-template-rows: -webkit-min-content auto 1fr auto auto;
+    grid-template-rows: min-content auto 1fr auto auto; /*dimension des ligne*/
+    gap: 0px 0px; /*il n'y pas ecart entre les differente partie*/
+    grid-auto-flow: row;
+    grid-template-areas:/*differentes parties de la grille*/
+      "Header_grid Header_grid Header_grid Header_grid Header_grid"
+      "Main_grid Main_grid Main_grid Aside Aside"
+      "Main_grid Main_grid Main_grid Image_grid Image_grid"
+      "Main_grid Main_grid Main_grid Image_grid Image_grid"
+      "Footer_grid Footer_grid Footer_grid Footer_grid Footer_grid";
+  }
+  .Main_grid {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  .Aside {
+    -ms-grid-row: 3;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+  }
+  .Image_grid {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+  }
+  .Header_grid {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+  }
+  .Footer_grid {
+    -ms-grid-row: 9;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /*Adapation de la taille pour les tablettes*/
+  .Container_grid {
+    display: -ms-grid;
+    display: grid; /*utilisation d'une grille*/
+    -ms-grid-columns: 1fr 0px 1fr 0px 1fr 0px 1fr 0px 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /*dimension des colognes*/
+    -ms-grid-rows: -webkit-min-content 0px auto 0px 1fr 0px auto 0px auto;
+    -ms-grid-rows: min-content 0px auto 0px 1fr 0px auto 0px auto;
+    grid-template-rows: -webkit-min-content auto 1fr auto auto;
+    grid-template-rows: min-content auto 1fr auto auto; /*dimension des ligne*/
+    gap: 0px 0px; /*il n'y pas ecart entre les differente partie*/
+    grid-auto-flow: row;
+    grid-template-areas:/*differentes parties de la grille*/
+      "Header_grid Header_grid Header_grid Header_grid Header_grid"
+      "Main_grid Main_grid Main_grid Aside Aside"
+      "Main_grid Main_grid Main_grid Image_grid Image_grid"
+      "Main_grid Main_grid Main_grid Image_grid Image_grid"
+      "Footer_grid Footer_grid Footer_grid Footer_grid Footer_grid";
+    /*Afin d'étirer la balise sur l'ensemble du viewport: vh (Viewport Height)*/
+  }
+  .Header_grid {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+  }
+  .Footer_grid {
+    -ms-grid-row: 9;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+  }
+  .Main_grid {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  .Aside {
+    -ms-grid-row: 3;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+  }
+  .Image_grid {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+  }
+
+}
+
+@media only screen and (min-width: 984px) {
+  /*Adaptation de la taille pour un ordinateur*/
+  .Container_grid {
+    display: -ms-grid;
+    display: grid; /*utilisation d'une grille*/
+    -ms-grid-columns: 1fr 0px 1fr 0px 1fr 0px 1fr 0px 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /*dimension des colognes*/
+    -ms-grid-rows: -webkit-min-content 0px auto 0px 1fr 0px 55vh 0px auto 0px
+      auto;
+    -ms-grid-rows: min-content 0px auto 0px 1fr 0px 55vh 0px auto 0px auto;
+    grid-template-rows: -webkit-min-content auto 1fr 55vh auto auto;
+    grid-template-rows: min-content auto 1fr 55vh auto auto; /*dimension des ligne*/
+    gap: 0px 0px; /*il n'y pas ecart entre les differente partie*/
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:/*differentes parties de la grille*/
+      "Header_grid Header_grid Header_grid Header_grid Header_grid"
+      "Main_grid Main_grid Main_grid Aside Aside"
+      "Main_grid Main_grid Main_grid Image_grid Image_grid"
+      "Main_grid Main_grid Main_grid Image_grid Image_grid"
+      "Image_grid Image_grid Image_grid Image_grid Image_grid"
+      "Footer_grid Footer_grid Footer_grid Footer_grid Footer_grid";
+    /*Afin d'étirer la balise sur l'ensemble du viewport: vh (Viewport Height)*/
+  }
+
+  .Header_grid {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+  }
+  .Footer_grid {
+    -ms-grid-row: 11;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+  }
+  .Main_grid {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  .Aside {
+    -ms-grid-row: 3;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+  }
+  .Image_grid {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+  }
+  .Image_grid > img {
+    margin: 0;
+  }
+  
+}
+
+
+

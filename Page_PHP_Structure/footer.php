@@ -49,9 +49,9 @@
               <ul>
                 <!--Utilisation d'une liste non-ordonée-->
                 <li>Claus Damia</li>
-                <li>Demeulemeester Maxime</li>
+                <li>Demanze Chloé</li>
                 <li>Saint-Maxent Juliette</li>
-                <li>Rouzé Capucine</li>
+                <li>Lemoine James</li>
               </ul>
               <!--Fin de la liste-->
             </div>
