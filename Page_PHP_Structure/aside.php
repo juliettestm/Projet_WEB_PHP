@@ -220,6 +220,17 @@
       
       >Informations sur vous</a
     ><!--Lien renvoyant vers les fusées du sites science et vie-->
+  </button>
+  </div>
+  <div class='dropitem'>
+  <!--Début du deuxieme item-->
+  <button>
+    <a
+      class='al'
+      href='../Page_PHP_Structure/supprimer.php'
+      
+      >Supprimer votre compte</a
+    ><!--Lien renvoyant vers les fusées du sites science et vie-->
   </button>";
   
   if(($_SESSION["admin"])==true){
