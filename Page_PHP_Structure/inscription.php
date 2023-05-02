@@ -34,7 +34,7 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 		$login=valider_donnees($_POST["pseudo"]);
 		$mdp=valider_donnees($_POST["Motdepasse"]);
 
-		if(!empty($nom) && !empty(prenom) && !empty($email) && !empty($date) && !empty($login) && !empty($mdp) && strlen($nom) <= 40 && strlen($prenom) <= 40 && strlen($login) <= 40 && preg_match("^[A-Za-z '-]+$^",$nom) && preg_match("^[A-Za-z '-]+$^",$prenom) && preg_match("^[A-Za-z '-]+$^",$login) && preg_match("^[a-zA-Z.-]+@[a-zA-Z.]$^",$email)){
+		if(!empty($nom) && !empty($prenom) && !empty($email) && !empty($date) && !empty($login) && !empty($mdp) && strlen($nom) <= 40 && strlen($prenom) <= 40 && strlen($login) <= 40 && preg_match("^[A-Za-z '-]+$^",$nom) && preg_match("^[A-Za-z '-]+$^",$prenom) && preg_match("^[A-Za-z '-]+$^",$login) && preg_match("^[a-zA-Z.-]+@[a-zA-Z.]$^",$email)){
 			$reqPrep1="INSERT INTO `Clients` ( `Nom`, `Prenom`, `Email`, `DateNaissance`,`pseudo`,`mdp`) VALUES ( '$nom','$prenom','$email','$date','$login','$mdp')";
 			$req1 =$conn->prepare($reqPrep1);
 			$req1->execute();
@@ -137,6 +137,7 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 
 				<span> <?php echo "* informations obligatoires ";?></span>
 				<span> <?php echo " <br>";?></span>
+				<span> <?php echo " <br>";?></span>
 				
 				<label for="nom">Nom * : </label>
 				<input type="text" class="bouton"id="nom" required pattern="^[A-Za-z '-]+$" maxlength="40" name="nom"><br/>
@@ -147,7 +148,7 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 				
 				
 				<label for="email">Email * : </label>
-				<input type="email"class="bouton" id="email"required pattern = "^[a-zA-Z.-]+@[a-zA-Z.]$" name="email"><br/>
+				<input type="email"class="bouton" id="email"required pattern = "^[a-zA-Z.-]+@[a-zA-Z.]+.[a-zA-Z.]$" name="email"><br/>
 				
 				<label for="dateN">Date de naissance * : </label>
 				<input type="date" class="bouton"id="DateN" required name="dateN"><br/>
