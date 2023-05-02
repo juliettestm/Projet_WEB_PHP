@@ -9,7 +9,7 @@ session_start();
 	}
 
 		if($_SERVER['REQUEST_METHOD']== 'POST' && !empty($_POST['servclient'])){
-			if($_FILES['image']['size']<90000000000000000000000000000000000000000000000 && ($_FILES['image']['type'] =="image/jpeg" || $_FILES['image']['type'] =="image/gif" || $_FILES['image']['type'] =="image/png")){
+			if($_FILES['image']['size']<9000000000000000000000000000000 && ($_FILES['image']['type'] =="image/jpeg" || $_FILES['image']['type'] =="image/gif" || $_FILES['image']['type'] =="image/png")){
 				move_uploaded_file($_FILES['image']['tmp_name'],"./images/". basename($_FILES['image']['name']));
                 $ok=1;
 			}
