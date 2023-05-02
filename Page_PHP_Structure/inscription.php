@@ -135,7 +135,7 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 			<fieldset>
 				<legend>Inscription pour le Voyage du systeme</legend>
 
-				<span class="error">* <?php echo * informations obligatoire;?></span>
+				<span class="error">* <?php echo "* informations obligatoire";?></span>
 				
 				<label for="nom">Nom * : </label>
 				<input type="text" class="bouton"id="nom" required pattern="^[A-Za-z '-]+$" maxlength="40" name="nom"><br/>
