@@ -146,7 +146,7 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 
 				<label for="Motdepasse">Votre mot de passe : </label>
 				<input type="password"class="bouton" id="pwd"required name="Motdepasse"><br/>
-				<span class="error">* <?php echo ^$mdpErr;?></span>
+				<span class="error">* <?php echo $mdpErr;?></span>
 
 				<input Type="submit" class="bouton" name="Inscription" required value="Inscription">
 			</fieldset>
