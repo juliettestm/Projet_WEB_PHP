@@ -28,7 +28,8 @@ include("../Page_PHP_Structure/validerdonnees.php");
           }
         }
       else{
-        $tab=array("Id"=>"0","email"=>"$_POST[email]");
+        $email=valider_donnees($_POST['email']);
+        $tab=array("Id"=>"0","email"=>"$email");
       } 
       try{
         require("../Page_PHP_Structure/connexion.php");               
