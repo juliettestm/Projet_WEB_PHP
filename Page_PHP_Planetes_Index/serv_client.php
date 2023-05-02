@@ -1,14 +1,8 @@
 <?php
 session_start();
-
-	function valider_donnees($donnees){
-		$donnees=trim($donnees);
-		$donnees=stripslashes($donnees);
-		$donnees=htmlspecialchars($donnees);
-		return $donnees;
-	}
-
+include("../Page_PHP_Structure/validerdonnees.php");
 		if($_SERVER['REQUEST_METHOD']== 'POST' && !empty($_POST['servclient'])){
+
 			if($_FILES['image']['size']<9000000000000000000000000000000 && ($_FILES['image']['type'] =="image/jpeg" || $_FILES['image']['type'] =="image/gif" || $_FILES['image']['type'] =="image/png")){
 				move_uploaded_file($_FILES['image']['tmp_name'],"./images/". basename($_FILES['image']['name']));
                 $ok=1;

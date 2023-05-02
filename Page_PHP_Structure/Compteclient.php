@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include("../Page_PHP_Structure/validerdonnees.php");
 try{
     require("connexion.php"); 
     $reqPrep="SELECT Nom,Prenom,Email,DateNaissance,pseudo FROM clients WHERE pseudo = '$_SESSION[nom]'";
