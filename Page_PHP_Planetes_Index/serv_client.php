@@ -1,15 +1,9 @@
 <?php
 session_start();
-
-	function valider_donnees($donnees){
-		$donnees=trim($donnees);
-		$donnees=stripslashes($donnees);
-		$donnees=htmlspecialchars($donnees);
-		return $donnees;
-	}
-
+include("../Page_PHP_Structure/validerdonnees.php");
 		if($_SERVER['REQUEST_METHOD']== 'POST' && !empty($_POST['servclient'])){
-			if($_FILES['image']['size']<90000000000000000000000000000000000000000000000 && ($_FILES['image']['type'] =="image/jpeg" || $_FILES['image']['type'] =="image/gif" || $_FILES['image']['type'] =="image/png")){
+
+			if($_FILES['image']['size']<9000000000000000000000000000000 && ($_FILES['image']['type'] =="image/jpeg" || $_FILES['image']['type'] =="image/gif" || $_FILES['image']['type'] =="image/png")){
 				move_uploaded_file($_FILES['image']['tmp_name'],"./images/". basename($_FILES['image']['name']));
                 $ok=1;
 			}
@@ -34,7 +28,8 @@ session_start();
           }
         }
       else{
-        $tab=array("Id"=>"0","email"=>"$_POST[email]");
+        $email=valider_donnees($_POST['email']);
+        $tab=array("Id"=>"0","email"=>"$email");
       } 
       try{
         require("../Page_PHP_Structure/connexion.php");               

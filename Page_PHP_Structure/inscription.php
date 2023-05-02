@@ -1,14 +1,8 @@
 <?php
 session_start();
 
-	function valider_donnees($donnees){
-		$donnees=trim($donnees);
-		$donnees=stripslashes($donnees);
-		$donnees=htmlspecialchars($donnees);
-		return $donnees;
-	}
-?>
-<?php
+include("../Page_PHP_Structure/validerdonnees.php");
+
 
 if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 	try{

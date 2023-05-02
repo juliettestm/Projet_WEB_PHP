@@ -1,43 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="utf-8">
-	<title>Formulaire Action </title>
-	<style>
-		body{padding:3%;}
-		table {
-			border-collapse: collapse;
-			border: solid 1px;
-			width:50%;
-		}
-		td,th {
-			border: solid 1px;
-			text-align:left;
-		}
-	</style>
+  <?php  include("../Page_PHP_Structure/header.php");?>
+  <link
+      rel="stylesheet"
+      href="../css_dossier/Css_Planètes/tableau.css"
+    >
 </head>
 <body>
-	<?php
-			function valider_donnees($donnees){
-				$donnees = trim($donnees);
-				$donnees = stripslashes($donnees);
-				$donnees = htmlspecialchars($donnees);
-				return $donnees;
-			}
-			
-			$civilite=$_POST["civilite"]; 
-			$nom=$_POST["nom"];
-			$conn=$_POST["connexion"];
-			$idee=$_POST["idee"];	
-			$lesplanetes=$_POST["planètes"];
-
-
-			
-
-			
-			
-			
-		
+<?php  include("../Page_PHP_Structure/aside.php");?>
+<div class="Main_grid">
+	<?php	
+	
+include("validerdonnees.php");
+		$civilite=$_POST["civilite"]; 
+		$nom=$_POST["nom"];
+		$conn=$_POST["connexion"];
+		$idee=$_POST["idee"];	
+		$lesplanetes=$_POST["planètes"];
+	
+	if(!empty($nom) && strlen($nom)<=40 &&preg_match("/^[A-Za-z '-]+$/",$nom) &&  !empty($civilite) && !empty($conn) ){
 			if(isset($_POST["Envoyer"] ) && $_SERVER['REQUEST_METHOD']=='POST') {
 				$civilite=valider_donnees($_POST["civilite"]); 
 				$nom=valider_donnees($_POST["nom"]);
@@ -53,17 +35,10 @@
 				foreach ($_POST["planètes"] as $val){
 					$lesplanetes[]=valider_donnees($val);
 				}
-			if(!empty($nom) && strlen($nom)<=40 &&preg_match("/^[A-Za-z '-]+$/",$nom) &&  !empty($civilite) && !empty($conn) ){
-				$civilite=$_POST["civilite"]; 
-				$nom=$_POST["nom"];
-				$conn=$_POST["connexion"];
-				$idee=$_POST["idee"];	
-				$lesplanetes=$_POST["planètes"];
 			}
 			else{
-				header('location:quizz.php');
-			}
-				
+				header('location:quizz.php');	
+			}	
 	?>
 	
 	<h1>Résultat sondage: <?php echo "$civilite. $nom"; ?></h1>
@@ -92,10 +67,18 @@
 			</td>
 		</tr>
 		<tr>
-			<th>Sugestion </th>
+			<th>Suggestion de question</th>
 			<td><?php echo $idee;?> </td>
 		</tr>
 	</table>
-	
-</body>
+	</div>
+		<div class="Footer_grid">
+        <!--Début du Footer appliqué a chaque page grâce a une class-->
+        <footer>
+        <?php  include("../Page_PHP_Structure/footer.php");?>
+        </footer>
+      </div>
+      <!--Fin du Footer-->
+    </div>
+  </body>
 </html>

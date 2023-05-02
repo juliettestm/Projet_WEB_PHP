@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include("validerdonnees.php");
 try{
     require("connexion.php"); 
     $reqPrep="SELECT Nom,Prenom,Email,DateNaissance,pseudo FROM clients WHERE pseudo = '$_SESSION[nom]'";
@@ -72,6 +72,11 @@ die("Erreur : " . $e->getMessage());
 </fieldset>
 <?php
 if(isset($_POST["Modifier"])){
+	$pseudo=valider_donnees($_POST["pseudo"]);
+	$nom=valider_donnees($_POST["nom"]);
+	$prenom=valider_donnees($_POST["prenom"]);
+	$email=valider_donnees($_POST["email"]);
+	$date=valider_donnees($_POST["dateN"]);
 	try{
 		require("connexion.php"); 
 		$reqPrep="SELECT pseudo FROM clients ";
@@ -84,10 +89,10 @@ if(isset($_POST["Modifier"])){
 			die("Erreur : " . $e->getMessage());
 			}
 		foreach($resultat as $row) {
-			if(($row['pseudo'])==($_POST["pseudo"])){
+			if(($row['pseudo'])==($pseudo)){
 				$double=1;
 				echo" <fieldset id='fieldset2'>
-				<h3>Ce pseudo: $_POST[pseudo] existe déjà ! </h3>
+				<h3>Ce pseudo: $pseudo existe déjà ! </h3>
 				</fieldset>";
 			}
 		}
@@ -112,11 +117,11 @@ try{
 	$req1 = $conn->prepare("UPDATE clients SET nom = :nom, prenom = :prenom, email = :email, dateNaissance = :dateN ,pseudo= :pseudo WHERE id=$row[Id]");
 	
 	$req1->execute([
-		"nom" => $_POST["nom"],
-		"prenom" => $_POST["prenom"],
-		"email" => $_POST["email"],
-		"dateN" => $_POST["dateN"],
-		"pseudo" => $_POST["pseudo"],
+		"nom" => $nom,
+		"prenom" => $prenom,
+		"email" => $email,
+		"dateN" => $date,
+		"pseudo" => $pseudo,
 	]);}
 	$conn= NULL;	
 	$_SESSION['nom']=$_POST["pseudo"];
