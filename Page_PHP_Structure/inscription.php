@@ -73,18 +73,25 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 			$nomErr = "Le nom est obligatoire";
 		} else {
 			$nom = test_input($_POST["nom"]);
+			if (!preg_match("/^[a-zA-Z-' ]*$/",$nom)) {
+				$nameErr = "Seules les lettres et les espaces sont autorisés";
+			}
 		}
 
 		if (empty($_POST["prenom"])) {
 			$prenomErr = "Le prenom est obligatoire";
 		} else {
 			$prenom = test_input($_POST["prenom"]);
+			if (!preg_match("/^[a-zA-Z-' ]*$/",$prenom)) {
+				$nameErr = "Seules les lettres et les espaces sont autorisés";
+			}
 		}
 
 		if (empty($_POST["email"])) {
 			$emailErr = "L'email est obligatoire";
 		} else {
 			$email = test_input($_POST["email"]);
+			
 		}
 
 		if (empty($_POST["pwd"])) {
@@ -103,6 +110,9 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 			$pseudoErr = "Le pseudo est obligatoire";
 		} else {
 			$pseudo = test_input($_POST["pseudo"]);
+			if (!preg_match("/^[a-zA-Z-' ]*$/",$pseudo)) {
+				$nameErr = "Seules les lettres et les espaces sont autorisés";
+			}
 		}
 
 
@@ -121,32 +131,32 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 				</fieldset>";
 			}
 			?>
+			
 			<fieldset>
 				<legend>Inscription pour le Voyage du systeme</legend>
+
+				<span class="error">* <?php echo * informations obligatoire;?></span>
 				
-				<label for="nom">Nom : </label>
+				<label for="nom">Nom * : </label>
 				<input type="text" class="bouton"id="nom" required pattern="^[A-Za-z '-]+$" maxlength="40" name="nom"><br/>
-				<span class="error">* <?php echo $nomErr;?></span>
 				
-				<label for="prenom">Prénom : </label>
+				
+				<label for="prenom">Prénom * : </label>
 				<input type="text"class="bouton" id="prenom"required pattern="^[A-Za-z '-]+$" maxlength="40" name="prenom"><br/>
-				<span class="error">* <?php echo $prenomErr;?></span>
 				
-				<label for="email">Email : </label>
+				
+				<label for="email">Email * : </label>
 				<input type="email"class="bouton" id="email"required pattern = "^[a-zA-Z.-]+@[a-zA-Z.]$" name="email"><br/>
-				<span class="error">* <?php echo $emailErr;?></span>
 				
-				<label for="dateN">Date de naissance : </label>
+				<label for="dateN">Date de naissance * : </label>
 				<input type="date" class="bouton"id="DateN" required name="dateN"><br/>
-				<span class="error">* <?php echo $dateNaissanceErr;?></span>
 
-				<label for="pseudo">Pseudo : </label>
+				<label for="pseudo">Pseudo * : </label>
 				<input type="text" class="bouton"id="pseudo"required pattern="^[A-Za-z '-]+$" maxlength="40" name="pseudo"><br/>
-				<span class="error">* <?php echo $pseudoErr;?></span>
+				
 
-				<label for="Motdepasse">Votre mot de passe : </label>
+				<label for="Motdepasse">Votre mot de passe * : </label>
 				<input type="password"class="bouton" id="pwd"required name="Motdepasse"><br/>
-				<span class="error">* <?php echo $mdpErr;?></span>
 
 				<input Type="submit" class="bouton" name="Inscription" required value="Inscription">
 			</fieldset>
