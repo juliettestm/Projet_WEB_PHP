@@ -2,26 +2,30 @@
 <html lang="fr">
 <head>
   <?php  include("../Page_PHP_Structure/header.php");?>
+  <link
+      rel="stylesheet"
+      href="../css_dossier/Css_Planètes/serv_client.css"
+    >
 </head>
 <body>
 <?php  include("../Page_PHP_Structure/aside.php");?>
-
-<form method="post" action="formulaire.php">
-			<fieldset style="width:50%;">
+<div class="Main_grid">
+<form method="post" action="formulaire.php" id="formLetter" class="formLetter">
+			<fieldset style="width:50%;" id='fieldset2'>
 				<legend>Sondage</legend>
 				
 				<label>Civilité :</label>
-				<input type="radio" name="civilite" id="male" value="M"/><label for="male" required="required">Monsieur</label>
-				<input type="radio" name="civilite" id="female" value="Mme"/><label for="female">Madame</label>
+				<input type="radio" class="bouton" name="civilite" id="male" value="M"/><label for="male" required="required">Monsieur</label>
+				<input type="radio"  class="bouton" name="civilite" id="female" value="Mme"/><label for="female">Madame</label>
 				
 				<hr>
 				<label for="nom" required="required" pattern="/^[A-Za-z '-]+$" maxlength="40">Nom :</label>
-				<input type="text" name="nom" id="nom" />
+				<input type="text" class="bouton" name="nom" id="nom" />
 		 			
 				
 				<hr>
-				<label for="connexion" required="required">Connection :</label>
-				<select name="connexion" id="connexion">
+				<label for="connexion"  required="required">Connexion :</label>
+				<select name="connexion" class="bouton" id="connexion">
 					<option value="">Depuis combien de temps êtes-vous connecté au site </option>
 					<option value="Semestriel">1 semaine</option>
 					<option value="Mensuel">1 mois</option>
@@ -31,24 +35,24 @@
 				
 				<hr>
 				<label>Votre planète préférée :</label>
-				<input type="checkbox" id="mcr" name="planètes[]" value="Mercure" /><label for="mcr">Mercure</label>
-				<input type="checkbox" id="vns" name="planètes[]" value="Vénus"/><label for="vns">Vénus</label>
-				<input type="checkbox" id="trr" name="planètes[]" value="Terre" /><label for="trr">Terre</label>
-				<input type="checkbox" id="mar" name="planètes[]" value="Mars" /><label for="mar">Mars</label>
-				<input type="checkbox" id="jup" name="planètes[]" value="Jupiter" /><label for="jup">Jupiter</label>
-				<input type="checkbox" id="sat" name="planètes[]" value="Saturne" /><label for="sat">Saturne</label>
-				<input type="checkbox" id="ura" name="planètes[]" value="Uranus" /><label for="ura">Uranus</label>
-				<input type="checkbox" id="nep" name="planètes[]" value="Neptune" /><label for="nep">Neptune</label>
+				<input class="bouton" type="checkbox" id="mcr" name="planètes[]" value="Mercure" /><label for="mcr">Mercure</label>
+				<input class="bouton" type="checkbox" id="vns" name="planètes[]" value="Vénus"/><label for="vns">Vénus</label>
+				<input class="bouton" type="checkbox" id="trr" name="planètes[]" value="Terre" /><label for="trr">Terre</label>
+				<input  class="bouton" type="checkbox" id="mar" name="planètes[]" value="Mars" /><label for="mar">Mars</label>
+				<input class="bouton" type="checkbox" id="jup" name="planètes[]" value="Jupiter" /><label for="jup">Jupiter</label>
+				<input class="bouton" type="checkbox" id="sat" name="planètes[]" value="Saturne" /><label for="sat">Saturne</label>
+				<input class="bouton" type="checkbox" id="ura" name="planètes[]" value="Uranus" /><label for="ura">Uranus</label>
+				<input class="bouton" type="checkbox" id="nep" name="planètes[]" value="Neptune" /><label for="nep">Neptune</label>
 				<hr>
 				<label for="idee">Des idées à suggérer :</label>
-				<textarea name="idee" id="idee" rows="3" cols="33"></textarea>
+				<textarea name="idee"  id="idee" rows="3" cols="33"></textarea>
 
 				<hr>
-				<input type="submit" name="Envoyer" Value="Envoyer le formulaire"/>
+				<input type="submit" class="bouton" name="Envoyer" Value="Envoyer le formulaire"/>
 				
 			</fieldset>
 		</form>
-		
+</div>
 
 <div class="Footer_grid">
         <!--Début du Footer appliqué a chaque page grâce a une class-->
