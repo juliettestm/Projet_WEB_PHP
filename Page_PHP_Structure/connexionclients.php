@@ -2,9 +2,9 @@
 session_start();
 	//Script du traitement du formulaire d'authentification
 	if(isset($_POST['Connexion'])){
-		
-		$login=$_POST['login'];
-		$mdp=$_POST['passwd'];
+		include("validerdonnees.php");
+		$login=valider_donnees($_POST['login']);
+		$mdp=valider_donnees($_POST['passwd']);
 		try{
 			require("connexion.php"); 
 			$reqPrep1="SELECT Mdp FROM clients WHERE pseudo = '$login'";
