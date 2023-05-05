@@ -114,6 +114,10 @@
                 </div>
               </div>
               <!--Fin de la troisieme partie-->
+              <?php
+              if(isset($_SESSION["authentifie"])){
+                if(($_SESSION["admin"])==FALSE){
+                echo"
               <div class='dropdown'>
                 <button class='button'>
                   <!--Quatrieme partie divisée en trois items-->
@@ -136,7 +140,47 @@
                   
                 </div>
               </div>
-              <!--Fin de la quatriéme partie-->
+              <!--Fin de la quatriéme partie-->";
+                }
+              if(($_SESSION["admin"])==TRUE){
+                echo"
+                <div class='dropdown'>
+                  <button class='button'>
+                    <!--Quatrieme partie divisée en trois items-->
+                    Clients
+                    <img src='svg/chevron.svg' alt='fleche en bas' ></button
+                  ><!--Nos produits dérivée-->
+                  <div class='dropdown-menu'>
+                    <div class='dropitem'>
+                      <!--Début du premier item-->
+                      <button>
+                        <a
+                          class='al'
+                          href='Page_PHP_Structure/pageadmin.php'
+                        
+                          >Demande client</a
+                        >
+                      </button>
+                    </div>
+                    <!--Fin du premier item-->
+                    <div class='dropitem'>
+                      <!--Début du premier item-->
+                      <button>
+                        <a
+                          class='al'
+                          href='Page_PHP_Structure/pageadminbis.php'
+                        
+                          >Réponse Quizz</a
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!--Fin de la quatriéme partie-->";
+              }
+              }
+              
+?>
               <div class='dropdown'>
                 <button class='button'>
                   <!--Cinquieme partie-->
@@ -207,20 +251,6 @@
         >Supprimer votre compte</a
       ><!--Lien renvoyant vers les fusées du sites science et vie-->
     </button>";
-
-    if(($_SESSION["admin"])==TRUE){
-    echo"</div>
-      <div class='dropitem'>
-     <!--Début du deuxieme item-->
-     <button>
-       <a
-         class='al'
-         href='Page_PHP_Structure/pageadmin.php'
-         
-         >Demandes clients</a
-       >
-     </button>";
-    }
     }
     
    
