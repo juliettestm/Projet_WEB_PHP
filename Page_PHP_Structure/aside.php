@@ -153,8 +153,7 @@
                     <button>
                       <a
                         class="al"
-                        href="https://www.cite-espace.com/"
-                        target="_blank"
+                        href='../Page_PHP_Structure/quizz.php'
                         >Cite-espace</a
                       ><!--Lien renvoyant vers le site de la Cité espace-->
                     </button>

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -35,20 +38,21 @@
 				
 				<hr>
 				<label>Votre planète préférée :</label>
-				<input class="bouton" type="checkbox" id="mcr" name="planètes[]" value="Mercure" /><label for="mcr">Mercure</label>
-				<input class="bouton" type="checkbox" id="vns" name="planètes[]" value="Vénus"/><label for="vns">Vénus</label>
-				<input class="bouton" type="checkbox" id="trr" name="planètes[]" value="Terre" /><label for="trr">Terre</label>
-				<input  class="bouton" type="checkbox" id="mar" name="planètes[]" value="Mars" /><label for="mar">Mars</label>
-				<input class="bouton" type="checkbox" id="jup" name="planètes[]" value="Jupiter" /><label for="jup">Jupiter</label>
-				<input class="bouton" type="checkbox" id="sat" name="planètes[]" value="Saturne" /><label for="sat">Saturne</label>
-				<input class="bouton" type="checkbox" id="ura" name="planètes[]" value="Uranus" /><label for="ura">Uranus</label>
-				<input class="bouton" type="checkbox" id="nep" name="planètes[]" value="Neptune" /><label for="nep">Neptune</label>
+				<br>
+				<input  style="display:inline-block;"class="bouton" type="checkbox" id="mcr" name="planètes[]" value="Mercure" /><label for="mcr">Mercure</label>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="vns" name="planètes[]" value="Vénus"/><label for="vns">Vénus</label>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="trr" name="planètes[]" value="Terre" /><label for="trr">Terre</label>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="mar" name="planètes[]" value="Mars" /><label for="mar">Mars</label>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="jup" name="planètes[]" value="Jupiter" /><label for="jup">Jupiter</label>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="sat" name="planètes[]" value="Saturne" /><label for="sat">Saturne</label>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="ura" name="planètes[]" value="Uranus" /><label for="ura">Uranus</label>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="nep" name="planètes[]" value="Neptune" /><label for="nep">Neptune</label>
 				<hr>
 				<label for="idee">Des idées à suggérer :</label>
 				<textarea name="idee"  id="idee" rows="3" cols="33"></textarea>
 
 				<hr>
-				<input type="submit" class="bouton" name="Envoyer" Value="Envoyer le formulaire"/>
+				<input type="submit" class="bouton" name="quizz" Value="Envoyer le formulaire"/>
 				
 			</fieldset>
 		</form>
