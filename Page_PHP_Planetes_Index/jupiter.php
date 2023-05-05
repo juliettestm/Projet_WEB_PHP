@@ -63,7 +63,7 @@ session_start();
                     <li>
                       Premièrement, c'est
                       <span class="important">la plus grande planète</span> du
-                      système 139820 km de diamètre.
+                      système 139820 km de diamètre. C'est pour cela qu'on la surnomme: La planete géante !
                     </li>
                     <li>
                       Deuxièment, elle possède des satellites naturels, ses 4

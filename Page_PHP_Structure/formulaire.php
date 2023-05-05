@@ -9,6 +9,7 @@ session_start();
 			$connexion=$_POST["connexion"];
 			$idee=$_POST["idee"];	
 			$lesplanetes=$_POST["planètes"];
+
 		$planete="";
 		if(!empty($nom) && strlen($nom)<=40 &&preg_match("/^[A-Za-z '-]+$/",$nom) &&  !empty($civilite) && !empty($connexion) ){
 				if(isset($_POST["quizz"] ) && $_SERVER['REQUEST_METHOD']=='POST') {
@@ -58,8 +59,12 @@ session_start();
 				 else{	
 					header('location:quizz.php');
 				 }
-		
-				
+				 $bonrep=0;
+				for($i=1;$i<5;$i++){
+				if(($_POST["$i"])=="true"){
+					$bonrep++;
+				}
+			}
 		?>
 		
 
@@ -101,6 +106,10 @@ session_start();
 				?>
 				</ul>	
 			</td>
+		</tr>
+		<tr>
+			<th>Réponse quizz</th>
+			<td><?php echo $bonrep;?>/10 <?php if($bonrep!=10){echo"Retentez votre chance! <br>Indice: Lisez bien toute nos page";}?></td>
 		</tr>
 		<tr>
 			<th>Suggestion de question</th>

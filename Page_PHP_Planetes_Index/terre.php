@@ -96,7 +96,7 @@ session_start();
                   montagnes, des plaines, des océans, etc... Sa particularité est,
                   que c'est une planète océanique, en effet
                   <span class="important">l'eau couvre 70%</span> de la surface
-                  de la Terre !
+                  de la Terre ! C'est pour cela qu'on la surnomme la planete Bleu !
                 </li>
               </ul>
             </div>
