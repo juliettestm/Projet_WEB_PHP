@@ -18,8 +18,8 @@ session_start();
 				<legend>Sondage</legend>
 				
 				<label>Civilité :</label>
-				<input type="radio" class="bouton" name="civilite" id="male" value="M"/><label for="male" required="required">Monsieur</label>
-				<input type="radio"  class="bouton" name="civilite" id="female" value="Mme"/><label for="female">Madame</label>
+				<input style="display:inline-block;" type="radio" class="bouton" name="civilite" id="male" value="M"/><label for="male" required="required">Monsieur</label>
+				<input  style="display:inline-block;" type="radio"  class="bouton" name="civilite" id="female" value="Mme"/><label for="female">Madame</label>
 				
 				<hr>
 				<label for="nom" required="required" pattern="/^[A-Za-z '-]+$" maxlength="40">Nom :</label>
@@ -39,14 +39,14 @@ session_start();
 				<hr>
 				<label>Votre planète préférée :</label>
 				<br>
-				<input  style="display:inline-block;"class="bouton" type="checkbox" id="mcr" name="planètes[]" value="Mercure" /><label for="mcr">Mercure</label>
-				<input style="display:inline-block;" class="bouton" type="checkbox" id="vns" name="planètes[]" value="Vénus"/><label for="vns">Vénus</label>
-				<input style="display:inline-block;" class="bouton" type="checkbox" id="trr" name="planètes[]" value="Terre" /><label for="trr">Terre</label>
-				<input style="display:inline-block;" class="bouton" type="checkbox" id="mar" name="planètes[]" value="Mars" /><label for="mar">Mars</label>
-				<input style="display:inline-block;" class="bouton" type="checkbox" id="jup" name="planètes[]" value="Jupiter" /><label for="jup">Jupiter</label>
-				<input style="display:inline-block;" class="bouton" type="checkbox" id="sat" name="planètes[]" value="Saturne" /><label for="sat">Saturne</label>
-				<input style="display:inline-block;" class="bouton" type="checkbox" id="ura" name="planètes[]" value="Uranus" /><label for="ura">Uranus</label>
-				<input style="display:inline-block;" class="bouton" type="checkbox" id="nep" name="planètes[]" value="Neptune" /><label for="nep">Neptune</label>
+				<input  style="display:inline-block;"class="bouton" type="checkbox" id="mcr" name="planètes[]" value="Mercure" /><label for="mcr">Mercure</label><br>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="vns" name="planètes[]" value="Vénus"/><label for="vns">Vénus</label><br>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="trr" name="planètes[]" value="Terre" /><label for="trr">Terre</label><br>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="mar" name="planètes[]" value="Mars" /><label for="mar">Mars</label><br>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="jup" name="planètes[]" value="Jupiter" /><label for="jup">Jupiter</label><br>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="sat" name="planètes[]" value="Saturne" /><label for="sat">Saturne</label><br>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="ura" name="planètes[]" value="Uranus" /><label for="ura">Uranus</label><br>
+				<input style="display:inline-block;" class="bouton" type="checkbox" id="nep" name="planètes[]" value="Neptune" /><label for="nep">Neptune</label><br>
 				<hr>
 				<label for="idee">Des idées à suggérer :</label>
 				<textarea name="idee"  id="idee" rows="3" cols="33"></textarea>

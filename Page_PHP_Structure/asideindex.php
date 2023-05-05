@@ -117,7 +117,7 @@
               <div class='dropdown'>
                 <button class='button'>
                   <!--Quatrieme partie divisée en trois items-->
-                  Produits dérivés
+                  Quizz
                   <img src='svg/chevron.svg' alt='fleche en bas' ></button
                 ><!--Nos produits dérivée-->
                 <div class='dropdown-menu'>
@@ -126,36 +126,14 @@
                     <button>
                       <a
                         class='al'
-                        href='https://www.maison-astronomie.com/fr/'
-                        target='_blank'
-                        >Maison-astronomie</a
+                        href='Page_PHP_Structure/quizz.php'
+                      
+                        >Quizz</a
                       ><!--Lien renvoyant vers un site d'astronomie-->
                     </button>
                   </div>
                   <!--Fin du premier item-->
-                  <div class='dropitem'>
-                    <!--Début du deuxieme item-->
-                    <button>
-                      <a
-                        class='al'
-                        href='https://www.nasa-shop.fr/'
-                        target='_blank'
-                        >Nasa shop</a
-                      ></button
-                    ><!--Lien renvoyant vers le site de la NASA-->
-                  </div>
-                  <!--Fin du deuxieme item-->
-                  <div class='dropitem'>
-                    <!--Début du troisieme item-->
-                    <button>
-                      <a
-                        class='al'
-                        href='Page_PHP_Structure/quizz.php'
-                        >Cite-espace</a
-                      ><!--Lien renvoyant vers le site de la Cité espace-->
-                    </button>
-                  </div>
-                  <!--Fin du troisieme item-->
+                  
                 </div>
               </div>
               <!--Fin de la quatriéme partie-->
