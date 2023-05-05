@@ -9,7 +9,12 @@ session_start();
 			$connexion=$_POST["connexion"];
 			$idee=$_POST["idee"];	
 			$lesplanetes=$_POST["planètes"];
-
+			$bonrep=0;
+			for($i=1;$i<6;$i++){
+			if(($_POST["$i"])=="true"){
+				$bonrep++;
+			}
+		}
 		$planete="";
 		if(!empty($nom) && strlen($nom)<=40 &&preg_match("/^[A-Za-z '-]+$/",$nom) &&  !empty($civilite) && !empty($connexion) ){
 				if(isset($_POST["quizz"] ) && $_SERVER['REQUEST_METHOD']=='POST') {
@@ -45,7 +50,7 @@ session_start();
 					
 					try{
 						require("connexion.php");  
-						$reqPrep1="INSERT INTO `Quizz` ( `ID`,`Connexion`, `Idee`,`planete`) VALUES ( '$tab[Id]','$connexion','$idee','$planete')";
+						$reqPrep1="INSERT INTO `Quizz` ( `ID`,`Connexion`, `Idee`,`planete`,`reponsequizz`) VALUES ( '$tab[Id]','$connexion','$idee','$planete','$bonrep')";
 						$req1 =$conn->prepare($reqPrep1);
 						$req1->execute();
 						$conn= NULL;
@@ -59,12 +64,7 @@ session_start();
 				 else{	
 					header('location:quizz.php');
 				 }
-				 $bonrep=0;
-				for($i=1;$i<6;$i++){
-				if(($_POST["$i"])=="true"){
-					$bonrep++;
-				}
-			}
+				
 		?>
 		
 
