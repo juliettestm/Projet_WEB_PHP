@@ -81,7 +81,7 @@ session_start();
 	<table>
 		
 		<tr>
-			<th>Connexion </th>
+			<th>Inscription</th>
 			<td ><?php echo $connexion; ?> </td>
 		</tr>
 		<tr>
