@@ -60,7 +60,7 @@ session_start();
 					header('location:quizz.php');
 				 }
 				 $bonrep=0;
-				for($i=1;$i<5;$i++){
+				for($i=1;$i<6;$i++){
 				if(($_POST["$i"])=="true"){
 					$bonrep++;
 				}
@@ -109,7 +109,7 @@ session_start();
 		</tr>
 		<tr>
 			<th>Réponse quizz</th>
-			<td><?php echo $bonrep;?>/10 <?php if($bonrep!=10){echo"Retentez votre chance! <br>Indice: Lisez bien toute nos page";}?></td>
+			<td><?php echo $bonrep;?>/5 <?php if($bonrep!=5){echo"Retentez votre chance! <br>Indice: Lisez bien toute nos page";}else{echo"Félicitation!";}?></td>
 		</tr>
 		<tr>
 			<th>Suggestion de question</th>

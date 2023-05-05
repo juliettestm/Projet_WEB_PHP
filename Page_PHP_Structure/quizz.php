@@ -67,7 +67,13 @@ session_start();
 				<input style="display:inline-block;" type="radio" class="bouton" name="4" id="quatre" value="false"/><label for="quatre" >Vénus</label>
 				<input  style="display:inline-block;" type="radio"  class="bouton" name="4" id="quatrebis" value="false"/><label for="quatrebis">Mars</label>
 				<input style="display:inline-block;" type="radio" class="bouton" name="4" id="quatretrois" value="true"/><label for="quatretrois" >Pluton</label>
-				<input  style="display:inline-block;" type="radio"  class="bouton" name="4" id="quatrequatre" value="false"/><label for="quatrequatre">mercure</label>
+				<input  style="display:inline-block;" type="radio"  class="bouton" name="4" id="quatrequatre" value="false"/><label for="quatrequatre">Mercure</label>
+				<br>	<br>
+				<label>Quelle est la plus petite planete du systeme solaire ?</label><br>
+				<input style="display:inline-block;" type="radio" class="bouton" name="5" id="cinq" value="false"/><label for="cinq" >Vénus</label>
+				<input  style="display:inline-block;" type="radio"  class="bouton" name="5" id="cinqbis" value="false"/><label for="cinqbis">Mars</label>
+				<input style="display:inline-block;" type="radio" class="bouton" name="5" id="cinqtrois" value="false"/><label for="cinqtrois" >Saturne</label>
+				<input  style="display:inline-block;" type="radio"  class="bouton" name="5" id="cinqquatre" value="true"/><label for="cinqquatre">Mercure</label>
 				<hr>
 				<label for="idee">Suggestion de question :</label>
 				<textarea name="idee"  id="idee" rows="3" cols="33"></textarea>
