@@ -11,7 +11,7 @@ session_start();
     >
 </head>
 <body>
-<?php  include("../Page_PHP_Structure/asidequizz.php");?>
+<?php  include("../Page_PHP_Structure/aside.php");?>
 <div class="Main_grid">
 <form method="post" action="formulaire.php" id="formLetter" class="formLetter">
 			<fieldset style="width:50%;" id='fieldset2'>
