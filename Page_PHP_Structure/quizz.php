@@ -55,9 +55,9 @@ session_start();
 				<br>	<br>
 				<label>Quelles sont les planetes les plus proche du soleil ?</label><br>
 				<input style="display:inline-block;" type="radio" class="bouton" name="2" id="deux" value="false"/><label  for="deux">Les planetes gazeuzes</label>
-				<input  style="display:inline-block;" type="radio"  class="bouton" name="2"id="deuxbis" value="true"/><label for="deuxbis">Les planete rocheuse</label>
+				<input  style="display:inline-block;" type="radio"  class="bouton" name="2"id="deuxbis" value="true"/><label for="deuxbis">Les planete rocheuses</label>
 				<br>	<br>
-				<label>Quel planete est Surnomé la géantes</label><br>
+				<label>Quel planete est Surnomé la géante</label><br>
 				<input style="display:inline-block;" type="radio" class="bouton" name="3" id="trois" value="true"/><label for="trois" >Jupiter</label>
 				<input  style="display:inline-block;" type="radio"  class="bouton" name="3" id="troisbis" value="false"/><label for="troisbis">Saturne</label>
 				<input style="display:inline-block;" type="radio" class="bouton" name="3" id="troistrois" value="false"/><label for="troistrois" >Uranus</label>
