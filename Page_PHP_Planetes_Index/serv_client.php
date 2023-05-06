@@ -5,8 +5,8 @@ include("../Page_PHP_Structure/validerdonnees.php");
 
 // Vérifier que le formulaire a été envoyé en méthode POST et que le champ 'servclient' n'est pas vide
 if($_SERVER['REQUEST_METHOD']== 'POST' && !empty($_POST['servclient'])){
-  // Vérifier que la taille de l'image est inférieure à 9000000000000000000000000000000 octets et que son type est jpeg, gif ou png
-  if($_FILES['image']['size']<9000000000000000000000000000000 && ($_FILES['image']['type'] =="image/jpeg" || $_FILES['image']['type'] =="image/gif" || $_FILES['image']['type'] =="image/png")){
+  // Vérifier que la taille de l'image est inférieure à 9000000000000000000000000 octets et que son type est jpeg, gif ou png
+  if($_FILES['image']['size']<90000000000000000000000 && ($_FILES['image']['type'] =="image/jpeg" || $_FILES['image']['type'] =="image/gif" || $_FILES['image']['type'] =="image/png")){
     // Déplacer l'image téléchargée vers le répertoire './images/' avec un nom basé sur son nom d'origine
     move_uploaded_file($_FILES['image']['tmp_name'],"./images/". basename($_FILES['image']['name']));
     // Définir une variable $ok à 1
@@ -122,9 +122,10 @@ if(isset($_POST['servclient'])){
                   <option value="autre">Autre...</option>
                 </select>
                 <br ><br >
-                <label required for="description">Message :</label>
+                <label for="description">Message :</label>
                 <br ><!--Le Message-->
                 <textarea
+                required
                   rows="10"
                   cols="50"
                   name="description"

@@ -45,7 +45,7 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 			die("Erreur : " . $e->getMessage());
 		}
 	}
-
+}
 ?>
 
 <!DOCTYPE html>

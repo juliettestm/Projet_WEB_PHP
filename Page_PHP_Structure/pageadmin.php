@@ -55,7 +55,7 @@ try{
   </tr>
   <tr>
   <th class='th'>Image </th>
-  <td class='td'><img src=\"..\Page_PHP_Planetes_Index\images\" .basename($row['image']) . "\"></td>
+  <td class='td'><img src=\"..\Page_PHP_Planetes_Index\images\\" .basename($row['image']) . "\"></td>
   </tr>
   </table>";
   $i++; // Incrémentation de la variable $i à chaque itération
