@@ -162,7 +162,7 @@ include("../Page_PHP_Structure/validerdonnees.php");
                       $req1->execute();
                 $resultat = $req1->fetchAll();
                 $conn= NULL;
-                echo"<h1>Vos Demande</h1>";
+                echo"<h1>Vos Demandes</h1>";
                 $i=1;
                 foreach($resultat as $row){
                   echo"

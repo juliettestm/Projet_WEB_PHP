@@ -62,7 +62,7 @@ session_start();
      		<fieldset>
      			<legend>Formulaire d'authentification</legend>
      			<label>Login :</label>
-     			<input type="text"class="bouton" id="pseudo" name="login" placeholder="Entrez votre pseudo" pattern="^[A-Za-z '-]+$" required>
+     			<input type="text"class="bouton" id="pseudo" name="login" placeholder="Entrez votre pseudo"  required>
      			<label>Password :</label>
      			<input type="password"class="bouton" id="pwd"name="passwd"  placeholder="Entrez votre mot de passe" required>
      			<input type="submit"id="soumission" class="bouton" name="Connexion" value="Envoyer"/>

@@ -158,7 +158,7 @@
                           class='al'
                           href='../Page_PHP_Structure/pageadmin.php'
                         
-                          >Demande client</a
+                          >Demandes client</a
                         >
                       </button>
                     </div>
@@ -170,7 +170,7 @@
                         class='al'
                         href='../Page_PHP_Structure/pageadminbis.php'
                       
-                        >Réponse Quizz</a
+                        >Réponses Quizz</a
                       >
                     </button>
                   </div>

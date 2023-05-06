@@ -31,7 +31,7 @@ try{
           $req1->execute();
     $resultat = $req1->fetchAll();
     $conn= NULL;
-    echo"<h1>Réponse Quizz</h1>";
+    echo"<h1>Réponses Quizz</h1>";
     $i=1;
     foreach($resultat as $row){
       echo"
