@@ -27,9 +27,9 @@ session_start();
 		 			
 				
 				<hr>
-				<label for="connexion"  required="required">Connexion :</label>
+				<label for="connexion"  required="required">Depuis combien de temps êtes-vous inscrit au site ?</label>
 				<select name="connexion" class="bouton" id="connexion">
-					<option value="">Depuis combien de temps êtes-vous inscrit au site </option>
+					<option value="">Inscription</option>
 					<option value="Semestriel">1 semaine</option>
 					<option value="Mensuel">1 mois</option>
 					<option value="Annuel">1 année</option>

@@ -26,7 +26,7 @@ header("Location:../index.php");
 try{
     require("../Page_PHP_Structure/connexion.php");             
     //Compléter ICI
-    $reqPrep1="SELECT id,Connexion,Idee,planete FROM Quizz ";
+    $reqPrep1="SELECT id,Connexion,Idee,planete,reponsequizz FROM Quizz ";
     $req1 =$conn->prepare($reqPrep1);
           $req1->execute();
     $resultat = $req1->fetchAll();
@@ -52,6 +52,10 @@ try{
           <tr>
           <th class='th'>Planetes favorites du client</th>
           <td class='td'>$row[planete]</td>
+          </tr>
+          <tr>
+          <th class='th'>Réponse du quizz</th>
+          <td class='td'>$row[reponsequizz]</td>
           </tr>
         </table>";
         $i++;
