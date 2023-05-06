@@ -26,6 +26,15 @@ session_start();
         }
 		try{
 			require("connexion.php"); 
+		$reqPrep1="DELETE FROM quizz WHERE `Id`=$tab[Id]";
+			$req1 =$conn->prepare($reqPrep1);
+            $req1->execute();
+		}                 
+		catch(Exception $e){
+			die("Erreur : " . $e->getMessage());
+        }
+		try{
+			require("connexion.php"); 
 		$reqPrep1="DELETE FROM clients WHERE `Id`=$tab[Id]";
 			$req1 =$conn->prepare($reqPrep1);
             $req1->execute();
