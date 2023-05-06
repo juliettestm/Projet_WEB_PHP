@@ -29,7 +29,7 @@ session_start();
 				<hr>
 				<label for="connexion"  required="required">Depuis combien de temps êtes-vous inscrit au site ?</label>
 				<select name="connexion" class="bouton" id="connexion">
-					<option value="">Inscription</option>
+					<option value="Débutant">Tout nouveau</option>
 					<option value="Semestriel">1 semaine</option>
 					<option value="Mensuel">1 mois</option>
 					<option value="Annuel">1 année</option>
@@ -50,26 +50,26 @@ session_start();
 				<hr>
 				<label>Quizz de 10 questions:</label><br>
 				<label>Quel est le surnom de la Terre ?</label><br>
-				<input style="display:inline-block;" type="radio" class="bouton" name="1" id="un" value="true"/><label for="un" >La planete Bleu</label>
-				<input  style="display:inline-block;" type="radio"  class="bouton" name="1" id="unbis" value="false"/><label for="unbis">La planete verte</label>
+				<input style="display:inline-block;" type="radio" class="bouton" name="1" id="un" value="true"/><label for="un" >La planète Bleue</label>
+				<input  style="display:inline-block;" type="radio"  class="bouton" name="1" id="unbis" value="false"/><label for="unbis">La planète verte</label>
 				<br>	<br>
-				<label>Quelles sont les planetes les plus proche du soleil ?</label><br>
-				<input style="display:inline-block;" type="radio" class="bouton" name="2" id="deux" value="false"/><label  for="deux">Les planetes gazeuzes</label>
-				<input  style="display:inline-block;" type="radio"  class="bouton" name="2"id="deuxbis" value="true"/><label for="deuxbis">Les planete rocheuses</label>
+				<label>Quelles sont les planètes les plus proches du soleil ?</label><br>
+				<input style="display:inline-block;" type="radio" class="bouton" name="2" id="deux" value="false"/><label  for="deux">Les planètes gazeuzes</label>
+				<input  style="display:inline-block;" type="radio"  class="bouton" name="2"id="deuxbis" value="true"/><label for="deuxbis">Les planètes rocheuses</label>
 				<br>	<br>
-				<label>Quel planete est Surnomé la géante</label><br>
+				<label>Quelle planète est Surnommée la géante ?</label><br>
 				<input style="display:inline-block;" type="radio" class="bouton" name="3" id="trois" value="true"/><label for="trois" >Jupiter</label>
 				<input  style="display:inline-block;" type="radio"  class="bouton" name="3" id="troisbis" value="false"/><label for="troisbis">Saturne</label>
 				<input style="display:inline-block;" type="radio" class="bouton" name="3" id="troistrois" value="false"/><label for="troistrois" >Uranus</label>
 				<input  style="display:inline-block;" type="radio"  class="bouton" name="3" id="troisquatre" value="false"/><label for="troisquatre">Neptune</label>
 				<br>	<br>
-				<label>Quelle planetes ne fait pas partie du systeme solaire ?</label><br>
+				<label>Quelle planète ne fait pas partie du système solaire ?</label><br>
 				<input style="display:inline-block;" type="radio" class="bouton" name="4" id="quatre" value="false"/><label for="quatre" >Vénus</label>
 				<input  style="display:inline-block;" type="radio"  class="bouton" name="4" id="quatrebis" value="false"/><label for="quatrebis">Mars</label>
 				<input style="display:inline-block;" type="radio" class="bouton" name="4" id="quatretrois" value="true"/><label for="quatretrois" >Pluton</label>
 				<input  style="display:inline-block;" type="radio"  class="bouton" name="4" id="quatrequatre" value="false"/><label for="quatrequatre">Mercure</label>
 				<br>	<br>
-				<label>Quelle est la plus petite planete du systeme solaire ?</label><br>
+				<label>Quelle est la plus petite planète du système solaire ?</label><br>
 				<input style="display:inline-block;" type="radio" class="bouton" name="5" id="cinq" value="false"/><label for="cinq" >Vénus</label>
 				<input  style="display:inline-block;" type="radio"  class="bouton" name="5" id="cinqbis" value="false"/><label for="cinqbis">Mars</label>
 				<input style="display:inline-block;" type="radio" class="bouton" name="5" id="cinqtrois" value="false"/><label for="cinqtrois" >Saturne</label>

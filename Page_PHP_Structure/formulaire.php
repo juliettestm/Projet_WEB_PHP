@@ -108,8 +108,8 @@ session_start();
 			</td>
 		</tr>
 		<tr>
-			<th>Réponse quizz</th>
-			<td><?php echo $bonrep;?>/5 <?php if($bonrep!=5){echo"Retentez votre chance! <br>Indice: Lisez bien toute nos page";}else{echo"Félicitation!";}?></td>
+			<th>Réponses quizz</th>
+			<td><?php echo $bonrep;?>/5 <?php if($bonrep!=5){echo"Retentez votre chance! <br>Indice: Lisez bien toutes nos pages";}else{echo"Félicitation !";}?></td>
 		</tr>
 		<tr>
 			<th>Suggestion de question</th>

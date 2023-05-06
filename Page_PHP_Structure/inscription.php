@@ -33,7 +33,7 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 		$login=valider_donnees($_POST["pseudo"]);
 		$mdp=valider_donnees($_POST["Motdepasse"]);
 
-		if(!empty($nom) && !empty($prenom) && !empty($email) && !empty($date) && !empty($login) && !empty($mdp) && strlen($nom) <= 40 && strlen($prenom) <= 40 && strlen($login) <= 40 && preg_match("^[A-Za-z '-]+$^",$nom) && preg_match("^[A-Za-z '-]+$^",$prenom) && preg_match("^[A-Za-z '-]+$^",$login) && preg_match("^[a-zA-Z.-]+@[a-zA-Z.]$^",$email)){
+		if(!empty($nom) && !empty($prenom) && !empty($email) && !empty($date) && !empty($login) && !empty($mdp) && strlen($nom) <= 40 && strlen($prenom) <= 40 && strlen($login) <= 40 && preg_match("/^[A-Za-z '-]+$/",$nom) && preg_match("/^[A-Za-z '-]+$/",$prenom) && preg_match("/^[A-Za-z '-]+$/",$login) && preg_match("/^[a-zA-Z.-]+@[a-zA-Z.]+.[a-zA-Z.]$/",$email ) ){
 			$reqPrep1="INSERT INTO `Clients` ( `Nom`, `Prenom`, `Email`, `DateNaissance`,`pseudo`,`mdp`) VALUES ( '$nom','$prenom','$email','$date','$login','$mdp')";
 			$req1 =$conn->prepare($reqPrep1);
 			$req1->execute();
@@ -63,65 +63,6 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 <?php  include("aside.php");?>
 <div class="Main_grid">
 
-<?php
-		// define variables and set to empty values
-		$nomErr = $emailErr = $pseudoErr = $prenomErr = $mdpErr = $dateNaissanceErr = "";
-		$nom = $email = $pseudo = $prenom = $mdp = $dateNaissance = "";
-
-		if (empty($_POST["nom"])) {
-			$nomErr = "Le nom est obligatoire";
-		} else {
-			$nom = test_input($_POST["nom"]);
-			if (!preg_match("/^[a-zA-Z-' ]*$/",$nom)) {
-				$nameErr = "Seules les lettres et les espaces sont autorisés";
-			}
-		}
-
-		if (empty($_POST["prenom"])) {
-			$prenomErr = "Le prenom est obligatoire";
-		} else {
-			$prenom = test_input($_POST["prenom"]);
-			if (!preg_match("/^[a-zA-Z-' ]*$/",$prenom)) {
-				$nameErr = "Seules les lettres et les espaces sont autorisés";
-			}
-		}
-
-		if (empty($_POST["email"])) {
-			$emailErr = "L'email est obligatoire";
-		} else {
-			$email = test_input($_POST["email"]);
-			
-		}
-
-		if (empty($_POST["pwd"])) {
-			$mdpErr = "Le mot de passe est obligatoire";
-		} else {
-			$mdp = test_input($_POST["pwd"]);
-		}
-
-		if (empty($_POST["DateN"])) {
-			$dateNaissanceErr = "La date de naissance est obligatoire";
-		} else {
-			$dateNaissance = test_input($_POST["DateN"]);
-		}
-
-		if (empty($_POST["pseudo"])) {
-			$pseudoErr = "Le pseudo est obligatoire";
-		} else {
-			$pseudo = test_input($_POST["pseudo"]);
-			if (!preg_match("/^[a-zA-Z-' ]*$/",$pseudo)) {
-				$nameErr = "Seules les lettres et les espaces sont autorisés";
-			}
-		}
-
-
-		function test_input($data) {
-			$data = trim($data);
-			$data = stripslashes($data);
-			$data = htmlspecialchars($data);
-			return $data;
-		}
-		?>
 		<form name="ajout" id="formLetter" action="inscription.php"class="formLetter" method="post">
 		<?php
 			if(isset($double)==TRUE){
@@ -147,7 +88,7 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 				
 				
 				<label for="email">Email * : </label>
-				<input type="email"class="bouton" id="email"required pattern = "^[a-zA-Z.-]+@[a-zA-Z.]+.[a-zA-Z.]$" name="email"><br/>
+				<input type="email"class="bouton" id="email"required pattern="^[a-zA-Z.-]+@[a-zA-Z.]+.[a-zA-Z.]$" name="email"><br/>
 				
 				<label for="dateN">Date de naissance * : </label>
 				<input type="date" class="bouton"id="DateN" required name="dateN"><br/>
