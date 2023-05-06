@@ -5,9 +5,11 @@ session_start();
 
 <html lang="fr">
 <head>
+  <!-- Importation du Header -->
   <?php  include("../Page_PHP_Structure/header.php");?>
 </head>
 <body>
+  <!-- Importation du Aside-->
 <?php  include("../Page_PHP_Structure/aside.php");?>
 
 <div class="Main_grid">

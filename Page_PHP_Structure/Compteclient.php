@@ -72,69 +72,92 @@ die("Erreur : " . $e->getMessage());
 </fieldset>
 <?php
 if(isset($_POST["Modifier"])){
+	// Validation et récupération des données du formulaire
 	$pseudo=valider_donnees($_POST["pseudo"]);
 	$nom=valider_donnees($_POST["nom"]);
 	$prenom=valider_donnees($_POST["prenom"]);
 	$email=valider_donnees($_POST["email"]);
 	$date=valider_donnees($_POST["dateN"]);
+	
 	try{
+		// Connexion à la base de données
 		require("connexion.php"); 
+		
+		// Requête pour récupérer tous les pseudos existants dans la table 'clients'
 		$reqPrep="SELECT pseudo FROM clients ";
 		$req =$conn->prepare($reqPrep);
 		$req->execute();
 		$resultat = $req->fetchAll();
+		
+		// Fermeture de la connexion à la base de données
 		$conn= NULL;
-		} 
+	} 
+	catch(Exception $e){
+		die("Erreur : " . $e->getMessage());
+	}
+	
+	// Vérification de l'existence d'un pseudo identique dans la table 'clients'
+	foreach($resultat as $row) {
+		if(($row['pseudo'])==($pseudo)){
+			$double=1;
+			echo" <fieldset id='fieldset2'>
+			<h3>Ce pseudo: $pseudo existe déjà ! </h3>
+			</fieldset>";
+		}
+	}
+	
+	// Vérification que le pseudo n'est pas déjà pris ou qu'il s'agit bien du pseudo actuel de l'utilisateur
+	if(isset($double)==FALSE || $_POST["pseudo"]==$_SESSION['nom'] ){
+		try{
+			// Connexion à la base de données
+			require("connexion.php");             
+			
+			// Requête pour récupérer l'ID de l'utilisateur actuel
+			$reqPrep1="SELECT Id FROM clients WHERE pseudo='$_SESSION[nom]'";
+			$req1 =$conn->prepare($reqPrep1);
+			$req1->execute();
+			$resultat = $req1->fetchAll();
+			
+			// Fermeture de la connexion à la base de données
+			$conn= NULL;
+		}                 
 		catch(Exception $e){
 			die("Erreur : " . $e->getMessage());
-			}
-		foreach($resultat as $row) {
-			if(($row['pseudo'])==($pseudo)){
-				$double=1;
-				echo" <fieldset id='fieldset2'>
-				<h3>Ce pseudo: $pseudo existe déjà ! </h3>
-				</fieldset>";
-			}
 		}
-if(isset($double)==FALSE || $_POST["pseudo"]==$_SESSION['nom'] ){
-try{
-	require("connexion.php");             
+		
+		try{
+			// Connexion à la base de données
+			require("connexion.php"); 
+			
+			// Requête pour mettre à jour les informations de l'utilisateur actuel dans la table 'clients'
+			foreach($resultat as $row){
+				$req1 = $conn->prepare("UPDATE clients SET nom = :nom, prenom = :prenom, email = :email, dateNaissance = :dateN ,pseudo= :pseudo WHERE id=$row[Id]");
+				
+				$req1->execute([
+					"nom" => $nom,
+					"prenom" => $prenom,
+					"email" => $email,
+					"dateN" => $date,
+					"pseudo" => $pseudo,
+				]);
+			}
+			
+			// Fermeture de la connexion à la base de données
+			$conn= NULL;	
+			
+			// Mise à jour de la variable de session 'nom' avec le nouveau pseudo de l'utilisateur
+			$_SESSION['nom']=$_POST["pseudo"];
+
 	
-	//Compléter ICI
-	$reqPrep1="SELECT Id FROM clients WHERE pseudo='$_SESSION[nom]'";
-	$req1 =$conn->prepare($reqPrep1);
-	$req1->execute();
-	$resultat = $req1->fetchAll();
-	$conn= NULL;
-}                 
-catch(Exception $e){
-	die("Erreur : " . $e->getMessage());
-}
-try{
-	require("connexion.php"); 
-	foreach($resultat as $row){
-	//Compléter ICI
-	$req1 = $conn->prepare("UPDATE clients SET nom = :nom, prenom = :prenom, email = :email, dateNaissance = :dateN ,pseudo= :pseudo WHERE id=$row[Id]");
-	
-	$req1->execute([
-		"nom" => $nom,
-		"prenom" => $prenom,
-		"email" => $email,
-		"dateN" => $date,
-		"pseudo" => $pseudo,
-	]);}
-	$conn= NULL;	
-	$_SESSION['nom']=$_POST["pseudo"];
-	
-	echo" <fieldset id='fieldset2'>
-		<h3>Votre compte a bien été modifié</h3>
-		</fieldset>";
-		header("Location:Compteclient.php");
-}                 
-catch(Exception $e){
-	die("Erreur : " . $e->getMessage());
-}
-}
+				echo" <fieldset id='fieldset2'>
+					<h3>Votre compte a bien été modifié</h3>
+					</fieldset>";
+					header("Location:Compteclient.php");
+			}                 
+			catch(Exception $e){
+				die("Erreur : " . $e->getMessage());
+			}
+			}
 		
 	}
 	?>

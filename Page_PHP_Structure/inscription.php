@@ -12,41 +12,39 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 		$req->execute();
 		$resultat = $req->fetchAll();
 		$conn= NULL;
-		} 
-		catch(Exception $e){
-			die("Erreur : " . $e->getMessage());
-			}
-		foreach($resultat as $row) {
-			if(($row['pseudo'])==($_POST["pseudo"])){
-				$double=1;
-
-			}
-			
-		}               
-	if(isset($double)==FALSE){
-	try{
-		require("connexion.php");               
-		$nom=valider_donnees($_POST["nom"]);
-		$prenom=valider_donnees($_POST["prenom"]);
-		$email=valider_donnees($_POST["email"]);
-		$date=valider_donnees($_POST["dateN"]);
-		$login=valider_donnees($_POST["pseudo"]);
-		$mdp=valider_donnees($_POST["Motdepasse"]);
-
-		if(!empty($nom) && !empty($prenom) && !empty($email) && !empty($date) && !empty($login) && !empty($mdp) && strlen($nom) <= 40 && strlen($prenom) <= 40 && strlen($login) <= 40 && preg_match("/^[A-Za-z '-]+$/",$nom) && preg_match("/^[A-Za-z '-]+$/",$prenom) && preg_match("/^[A-Za-z '-]+$/",$login) && preg_match("/^[a-zA-Z.-]+@[a-zA-Z.]+.[a-zA-Z.]$/",$email ) ){
-			$reqPrep1="INSERT INTO `Clients` ( `Nom`, `Prenom`, `Email`, `DateNaissance`,`pseudo`,`mdp`) VALUES ( '$nom','$prenom','$email','$date','$login','$mdp')";
-			$req1 =$conn->prepare($reqPrep1);
-			$req1->execute();
-		
-			$conn= NULL;
-			header("Location:../index.php");
-		}
-	}                 
-	catch(Exception $e){
+	} catch(Exception $e){
 		die("Erreur : " . $e->getMessage());
 	}
-}
-}
+	
+	foreach($resultat as $row) {
+		if(($row['pseudo'])==($_POST["pseudo"])){
+			$double=1; // Si le pseudo est déjà utilisé, le mettre à 1
+		}
+	}               
+	
+	// Si le pseudo entré n'est pas déjà utilisé, ajouter un nouveau client à la table "Clients"
+	if(isset($double)==FALSE){
+		try{
+			require("connexion.php");               
+			$nom=valider_donnees($_POST["nom"]);
+			$prenom=valider_donnees($_POST["prenom"]);
+			$email=valider_donnees($_POST["email"]);
+			$date=valider_donnees($_POST["dateN"]);
+			$login=valider_donnees($_POST["pseudo"]);
+			$mdp=valider_donnees($_POST["Motdepasse"]);
+	
+			// Vérifie que toutes les données entrées sont valides avant de les ajouter à la table "Clients"
+			if(!empty($nom) && !empty($prenom) && !empty($email) && !empty($date) && !empty($login) && !empty($mdp) && strlen($nom) <= 40 && strlen($prenom) <= 40 && strlen($login) <= 40 && preg_match("/^[A-Za-z '-]+$/",$nom) && preg_match("/^[A-Za-z '-]+$/",$prenom) && preg_match("/^[A-Za-z '-]+$/",$login) && preg_match("/^[a-zA-Z.-]+@[a-zA-Z.]+.[a-zA-Z.]$/",$email ) ){
+				$reqPrep1="INSERT INTO `Clients` ( `Nom`, `Prenom`, `Email`, `DateNaissance`,`pseudo`,`mdp`) VALUES ( '$nom','$prenom','$email','$date','$login','$mdp')";
+				$req1 =$conn->prepare($reqPrep1);
+				$req1->execute();
+				$conn= NULL;
+				header("Location:../index.php"); // Redirige l'utilisateur vers la page d'accueil
+			}
+		} catch(Exception $e){
+			die("Erreur : " . $e->getMessage());
+		}
+	}
 
 ?>
 
