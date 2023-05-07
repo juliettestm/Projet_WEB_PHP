@@ -34,7 +34,7 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 			$mdp=valider_donnees($_POST["Motdepasse"]);
 	
 			// Vérifie que toutes les données entrées sont valides avant de les ajouter à la table "Clients"
-			if(!empty($nom) && !empty($prenom) && !empty($email) && !empty($date) && !empty($login) && !empty($mdp) && strlen($nom) <= 40 && strlen($prenom) <= 40 && strlen($login) <= 40 && preg_match("/^[A-Za-z '-]+$/",$nom) && preg_match("/^[A-Za-z '-]+$/",$prenom) && preg_match("/^[A-Za-z '-]+$/",$login) && preg_match("/^[a-zA-Z.-]+@[a-zA-Z.]+.[a-zA-Z.]$/",$email ) ){
+			if(!empty($nom) && !empty($prenom) && !empty($email) && !empty($date) && !empty($login) && !empty($mdp) && strlen($nom) <= 40 && strlen($prenom) <= 40 && strlen($login) <= 40 && preg_match("/^[A-Za-z '-]+$/",$nom) && preg_match("/^[A-Za-z '-]+$/",$prenom) && preg_match("/^[A-Za-z1-9 '-]+$/",$login) && preg_match("/^[a-zA-Z1-9.-]+@[a-zA-Z.]+.[a-zA-Z.]$/",$email ) ){
 				$reqPrep1="INSERT INTO `Clients` ( `Nom`, `Prenom`, `Email`, `DateNaissance`,`pseudo`,`mdp`) VALUES ( '$nom','$prenom','$email','$date','$login','$mdp')";
 				$req1 =$conn->prepare($reqPrep1);
 				$req1->execute();
@@ -86,13 +86,13 @@ if (isset($_POST["Inscription"]) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 				
 				
 				<label for="email">Email * : </label>
-				<input type="email"class="bouton" id="email"required pattern="^[a-zA-Z.-]+@[a-zA-Z.]+.[a-zA-Z.]$" name="email"><br/>
+				<input type="email"class="bouton" id="email"required pattern="^[a-zA-Z1-9.-]+@[a-zA-Z.]+.[a-zA-Z.]$" name="email"><br/>
 				
 				<label for="dateN">Date de naissance * : </label>
 				<input type="date" class="bouton"id="DateN" required name="dateN"><br/>
 
 				<label for="pseudo">Pseudo * : </label>
-				<input type="text" class="bouton"id="pseudo"required pattern="^[A-Za-z '-]+$" maxlength="40" name="pseudo"><br/>
+				<input type="text" class="bouton"id="pseudo"required pattern="^[A-Za-z1-9 '-]+$" maxlength="40" name="pseudo"><br/>
 				
 
 				<label for="Motdepasse">Votre mot de passe * : </label>

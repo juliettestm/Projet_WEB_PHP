@@ -55,7 +55,7 @@ if(isset($_POST['servclient'])){
         $image = $_FILES['image']['name'];
         
         // On prépare la requête SQL d'insertion avec des paramètres à remplacer
-        $reqPrep1 = "INSERT INTO `Suggestion` (`ID`, `objet`, `description`, `email`, `image`) VALUES ('$tab[Id]', '$objet', '$description', '$tab[email]', '$image')";
+        $reqPrep1 = "INSERT INTO `Suggestion` (`ID`, `objet`, `description`, `email`, `image`) VALUES ('$tab[Id]', '$objet', \"$description\", '$tab[email]', '$image')";
         
         // On prépare la requête pour l'exécution avec les paramètres remplacés
         $req1 = $conn->prepare($reqPrep1);

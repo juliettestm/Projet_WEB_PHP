@@ -72,7 +72,7 @@ session_start();
 				require("connexion.php");  
 				
 				// Insertion des données dans la table Quizz
-				$reqPrep1="INSERT INTO `Quizz` ( `ID`,`Connexion`, `Idee`,`planete`,`reponsequizz`) VALUES ( '$tab[Id]','$connexion','$idee','$planete','$bonrep')";
+				$reqPrep1="INSERT INTO `Quizz` ( `ID`,`Connexion`, `Idee`,`planete`,`reponsequizz`) VALUES ( '$tab[Id]','$connexion',\"$idee\",'$planete','$bonrep')";
 				$req1 =$conn->prepare($reqPrep1);
 				$req1->execute();
 				$conn= NULL;
