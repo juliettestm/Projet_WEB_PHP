@@ -212,7 +212,13 @@ if(isset($_POST['servclient'])){
                             </tr>
                             <tr>
                                 <th class='th'>Image </th>
-                                <td class='td'><img src=\".\images\\" .basename($row['image']) . "\"></td>
+                                <td class='td'>";
+                                if($row['image']==NULL){
+                                  echo"Pas d'image";
+                                }
+                                else{
+                                echo"<img src=\".\images\\" .basename($row['image']) . "\">";}
+                               echo" </td>
                             </tr>
                         </table>";
                     $i++; // incrémente le compteur
