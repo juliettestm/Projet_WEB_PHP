@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 17, 2023 at 07:26 PM
+-- Generation Time: May 08, 2023 at 12:32 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -43,9 +43,33 @@ CREATE TABLE `clients` (
 
 INSERT INTO `clients` (`ID`, `Nom`, `Prenom`, `Email`, `DateNaissance`, `pseudo`, `Mdp`) VALUES
 (0, 'pasconnecte', 'pasconnecte', 'pasconnecte', '2023-04-03', 'pasconnecte', 'pasconnecte'),
-(4, 'Damia Claus', 'Damia', 'kylian.Mbappe@student.junia.com', '2023-04-03', 'kilogramme', 'kilogramme'),
-(6, 'Juliette', 'Damia', 'kylian.Mbappe@student.junia.com', '2023-04-10', 'salut', 'salut'),
-(20, 'sodzo', 'szs', 'kylian.Mbappe@student.junia.com', '2023-03-28', 'france', 'dede');
+(1, 'admin', 'admin', 'admin', '2023-04-20', 'admin', 'admin123'),
+(15, 'Martin', 'Louis', 'Louis.martin@gmail.com', '2001-05-01', 'Louis74', 'Louis94'),
+(16, 'Dupond', 'George', 'George.4UK@yahoo.fr', '1992-06-02', 'Geo2UK', 'PIOU');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quizz`
+--
+
+CREATE TABLE `quizz` (
+  `quizz` int(11) NOT NULL,
+  `ID` int(11) NOT NULL,
+  `Connexion` varchar(64) NOT NULL,
+  `Idee` varchar(200) NOT NULL,
+  `planete` varchar(64) NOT NULL,
+  `reponsequizz` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `quizz`
+--
+
+INSERT INTO `quizz` (`quizz`, `ID`, `Connexion`, `Idee`, `planete`, `reponsequizz`) VALUES
+(74, 15, 'Débutant', 'Combien y a t il de planètes dans le système solaire ?', ' Terre', 5),
+(75, 15, 'Mensuel', '', ' Mars', 2),
+(76, 16, 'Annuel', 'quelles planètes sont surnommées les planètes jumelles ? \r\nBonne réponse : Uranus et Neptune', ' Neptune', 5);
 
 -- --------------------------------------------------------
 
@@ -66,8 +90,8 @@ CREATE TABLE `suggestion` (
 --
 
 INSERT INTO `suggestion` (`ID`, `objet`, `description`, `email`, `image`) VALUES
-(4, 'problemes techniques', 'defefefefef', 'kylian.Mbappe@student.junia.com', 'buzz.png'),
-(0, 'suggestion', 'edede', 'juliette.saint-maxent@student.junia.com', 'buzz.png');
+(0, 'autre', 'Bonjour, est ce que je peux utiliser votre site pour faire mon exposé au collège ,', 'bonobo@wanadoo.fr', 'college.jpg'),
+(15, 'suggestion', 'Une musique d ambiance serait appréciée.', 'Louis.martin@gmail.com', '');
 
 --
 -- Indexes for dumped tables
@@ -79,6 +103,13 @@ INSERT INTO `suggestion` (`ID`, `objet`, `description`, `email`, `image`) VALUES
 ALTER TABLE `clients`
   ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `pseudo` (`pseudo`);
+
+--
+-- Indexes for table `quizz`
+--
+ALTER TABLE `quizz`
+  ADD PRIMARY KEY (`quizz`),
+  ADD KEY `ID` (`ID`);
 
 --
 -- Indexes for table `suggestion`
@@ -95,11 +126,23 @@ ALTER TABLE `suggestion`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `quizz`
+--
+ALTER TABLE `quizz`
+  MODIFY `quizz` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `quizz`
+--
+ALTER TABLE `quizz`
+  ADD CONSTRAINT `quizz_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `clients` (`ID`);
 
 --
 -- Constraints for table `suggestion`
